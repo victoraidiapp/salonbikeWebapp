@@ -14,20 +14,20 @@
       background-color: #007aff;
     }
     .tabbar > .button.estacion > .icon  {
-      -webkit-mask-image: url('../icons/Head_phones.svg');
+      -webkit-mask-image: url('../icons/bikeStations.png');
     }
     .tabbar > .button.ruta > .icon  {
-      -webkit-mask-image: url('../icons/Documents.svg');
+      -webkit-mask-image: url('../icons/route.png');
     }
     .tabbar > .button.carril > .icon {
-      -webkit-mask-image: url('../icons/Documents.svg');
+      -webkit-mask-image: url('../icons/carrilBici.png');
     }
     .tabbar > .button.rutabici > .icon  {
-      -webkit-mask-image: url('../icons/Download.svg');
+      -webkit-mask-image: url('../icons/route-nearest-station.png');
     }
 	
 	.tabbar > .button.listado > .icon  {
-      -webkit-mask-image: url('../icons/Download.svg');
+      -webkit-mask-image: url('../icons/list.png');
     }
     .image-grid, .image-grid > li {
       list-style: none:

@@ -27,6 +27,25 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     manejadores: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		jQuery(document).on("tap",".tabbar .button", function(){
+	if($(this).hasClass("estacion")){
+		console.log("Pulsado estacion.");
+		return false;
+	}else if($(this).hasClass("ruta")){
+		console.log("Pulsado ruta.");
+		return false;
+	}else if($(this).hasClass("carril")){
+		console.log("Pulsado carril.");
+		return false;
+	}else if($(this).hasClass("rutabici")){
+		console.log("Pulsado Ruta en bici.");
+		return false;
+	}else if($(this).hasClass("listado")){
+		console.log("Pulsado Listado.");
+		return false;
+	}
+
+});
     },
     // deviceready Event Handler
     //
@@ -41,25 +60,4 @@ var app = {
     }
 };
 
-jQuery(document).on("tap", function(){
-	$( ".estacion" ).click( function () {
-		alert("Este es el tabbar-nav de la visualización de las estaciones bici.");
-		console.log("Pulsado estacion.");
-	}); 
-	$( ".ruta" ).click( function () {
-		alert("Este es el tabbar-nav para trazar la ruta desde la posición actual hasta el carril bici más cercano.");
-		console.log("Pulsado ruta.");
-	});
-	$( ".carril" ).click( function () {
-		alert("Este es el tabbar-nav de la visualización de los carriles bici.");
-		console.log("Pulsado carril.");
-	});
-	$( ".rutabici" ).click( function () {
-		alert("Este es el tabbar-nav para trazar la ruta desde la posición actual hasta la estación bici más cercana.");
-		console.log("Pulsado Ruta en bici.");
-	});
-	$( ".listado" ).click( function () {
-		alert("Este es el tabbar-nav que muestra el listado de los carriles bici.");
-		console.log("Pulsado Listado.");
-	});
-});
+

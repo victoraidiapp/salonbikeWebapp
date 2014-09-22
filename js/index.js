@@ -40,3 +40,26 @@ var app = {
         
     }
 };
+
+jQuery(document).on("tap", function(){
+	$( ".estacion" ).click( function () {
+		alert("Este es el tabbar-nav de la visualización de las estaciones bici.");
+		console.log("Pulsado estacion.");
+	}); 
+	$( ".ruta" ).click( function () {
+		alert("Este es el tabbar-nav para trazar la ruta desde la posición actual hasta el carril bici más cercano.");
+		console.log("Pulsado ruta.");
+	});
+	$( ".carril" ).click( function () {
+		alert("Este es el tabbar-nav de la visualización de los carriles bici.");
+		console.log("Pulsado carril.");
+	});
+	$( ".rutabici" ).click( function () {
+		alert("Este es el tabbar-nav para trazar la ruta desde la posición actual hasta la estación bici más cercana.");
+		console.log("Pulsado Ruta en bici.");
+	});
+	$( ".listado" ).click( function () {
+		alert("Este es el tabbar-nav que muestra el listado de los carriles bici.");
+		console.log("Pulsado Listado.");
+	});
+});

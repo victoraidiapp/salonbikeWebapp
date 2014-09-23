@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.manejadores();
+		LoadingDialog.init();
     },
     // Bind Event Listeners
     //

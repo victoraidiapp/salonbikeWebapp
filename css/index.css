@@ -113,3 +113,24 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+article .loading{
+	background-color: #000;
+	background-image: url(../img/ajax-loader.gif);
+	background-repeat:no-repeat;
+	opacity:0.4;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	height:20px;
+	padding-top:80px;
+	background-position: center center;
+	border-radius:10px;
+	margin-top:30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	display:none;
+	margin-bottom:30px;
+}

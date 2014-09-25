@@ -31,9 +31,9 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="chui/chui-ios-3.5.4.css" />
         <link rel="stylesheet" href="css/salonbike.css">
-                <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBChbZRBqtlb9wg5sbJSOE0amo6dAL503I&sensor=true">
-    </script> 
+        <script type="text/javascript"
+      	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBChbZRBqtlb9wg5sbJSOE0amo6dAL503I&sensor=true">
+    	</script>
         <!-- javascript funciones personalizadas -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         
@@ -65,8 +65,10 @@
          		selected : 0
       		};
       		$.UITabbar(opts);
-			app.initialize();
-    	});
+			app.initialize();			
+			MapManager.init();
+        	console.log('Se inició el mapa?');        	
+    	});  	   		
   		</script>
   
   	<article id="mapa" class="current">

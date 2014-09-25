@@ -31,7 +31,11 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     manejadores: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-		jQuery(document).on("tap",".tabbar .button", function(){
+		jQuery(document).off("tap",".tabbar .button");
+		jQuery(document).off("singletap",".tabbar .button");
+		$('body').find('.tabbar').off('singletap', '.button');
+		jQuery(document).on("singletap",".tabbar .button", function(event){
+			//event.stopPropagation();
 	if($(this).hasClass("estacion")){
 		console.log("Pulsado estacion.");
 		return false;
@@ -40,6 +44,9 @@ var app = {
 		return false;
 	}else if($(this).hasClass("carril")){
 		console.log("Pulsado carril.");
+		//alert("Paramos un momento");
+		$(this).toggleClass("selected");
+			
 		MapManager.showBikeLaneLayer();
 		return false;
 	}else if($(this).hasClass("rutabici")){

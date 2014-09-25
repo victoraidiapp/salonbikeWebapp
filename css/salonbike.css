@@ -9,9 +9,9 @@
       -webkit-mask-size: 100%;
       -webkit-mask-repeat: no-repeat;
     }
-    .isiOS .tabbar > .button.selected > .icon,
-    .isiOS .tabbar > .button:hover > .icon {
-      background-color: #007aff;
+    .isiOS .tabbar > .button.selected > .icon
+     {
+      background-color: #007aff !important;
     }
     .tabbar > .button.estacion > .icon  {
       -webkit-mask-image: url('../icons/bikeStations.png');

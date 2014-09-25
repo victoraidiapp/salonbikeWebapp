@@ -22,6 +22,9 @@ var app = {
     initialize: function() {
         this.manejadores();
 		LoadingDialog.init();
+		$.UIGoToArticle("#mapa");
+		setTimeout(MapManager.init("gmapa"),3000);
+		
 		
 		
     },

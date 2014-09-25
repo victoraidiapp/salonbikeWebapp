@@ -62,18 +62,18 @@
          		imagePath : "icons/",
          		icons : ["estacion", "ruta", "carril", "rutabici", "listado"],
          		labels : ["Estaciones", "Ruta", "Carril bici", "Ruta bici", "Listado"],
-         		selected : 0
+         		//selected : 2
       		};
       		$.UITabbar(opts);
 			app.initialize();			
-			MapManager.init();
+			
         	console.log('Se inició el mapa?');        	
     	});  	   		
   		</script>
   
   	<article id="mapa" class="current">
     	<section>
-        	<div class="role-content"></div>
+        	<div class="role-content" id="gmapa"></div>
         </section>
     </article>
   	<article id="listaZonas">

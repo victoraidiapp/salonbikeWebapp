@@ -8,11 +8,17 @@ var MapManager={
 	mapObject:null,
 	//Esta función inicializa y pinta el mapa Google, para ello recibe el identificador del contenedor donde pintar el mapa
 	init:function(mapId){
+		var infoWindow=new google.maps.InfoWindow();
+	 var height = $(window).height();
+                var width = $(window).width();
+
+                $("#"+mapId).height(height-50);
+                $("#"+mapId).width(width);
 		var mapOptions = {
 			    zoom: 14,
 			    center: new google.maps.LatLng(40.9741682, -5.6504373)
 			  };
-		mapId = new google.maps.Map(document.getElementById('mapa'),
+		new google.maps.Map(document.getElementById(mapId),
 			      mapOptions);
 		
 	},

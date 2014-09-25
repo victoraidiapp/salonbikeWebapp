@@ -134,3 +134,9 @@ article .loading{
 	display:none;
 	margin-bottom:30px;
 }
+article{
+top:0px!important;	
+}
+article section{
+padding-top:0px!important;	
+}

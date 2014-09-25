@@ -16,11 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
         this.manejadores();
 		LoadingDialog.init();
+		
+		
     },
     // Bind Event Listeners
     //
@@ -37,6 +40,7 @@ var app = {
 		return false;
 	}else if($(this).hasClass("carril")){
 		console.log("Pulsado carril.");
+		MapManager.showBikeLaneLayer();
 		return false;
 	}else if($(this).hasClass("rutabici")){
 		console.log("Pulsado Ruta en bici.");

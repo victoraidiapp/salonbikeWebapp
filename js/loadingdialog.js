@@ -10,7 +10,7 @@ manejadores:function(){
 	
 },
 show:function(texto){
-	$('article.current .loading').text(message).show();
+	$('article.current .loading').text(texto).show();
 	$('article.current .loading').nextAll().addClass('whenloading');
 },
 hide:function(){

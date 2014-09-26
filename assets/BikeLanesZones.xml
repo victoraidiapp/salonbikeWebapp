@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<LanesZone>
+		<name>Zona-1: GARRIDO NORTE - CARMELITAS</name>
+		<length>6,177 Km</length>
+		<color>#A61B4A</color>
+		<description><![CDATA[La Zona - A, une el Barrio de Garrido con el barrio de Carmelitas.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-A61B4A-5</styleUrl>
+				<name>Paseo Torrente Ballester</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.652002,40.980072,0.0 -5.651865,40.980259,0.0 -5.65473,40.981453,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-A61B4A-5</styleUrl>
+				<name>Vialia - Federíco Anaya</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.655853,40.974834,0.0 -5.654762,40.976147,0.0 -5.653979,40.977119,0.0 -5.653891,40.977142,0.0 -5.653819,40.977154,0.0 -5.653739,40.977131,0.0 -5.653627,40.97728,0.0 -5.653658,40.977348,0.0 -5.653625,40.977459,0.0 -5.652321,40.978977,0.0 -5.652085,40.979084,0.0 -5.651803,40.979156,0.0 -5.651543,40.97916,0.0 -5.651374,40.979126,0.0 -5.651326,40.979103,0.0 -5.651262000000001,40.978985,0.0 -5.650996,40.978874,0.0 -5.647576,40.974506000000005,0.0 -5.647584,40.974468,0.0 -5.647616,40.974442,0.0 -5.649757,40.973495,0.0 -5.648904,40.972347,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-A61B4A-5</styleUrl>
+				<name>Piscina Garrido</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.651004,40.978897,0.0 -5.650701,40.979031,0.0 -5.650747,40.979115,0.0 -5.650706,40.979214,0.0 -5.650714,40.979324,0.0 -5.650704000000001,40.979427,0.0 -5.650945,40.979626,0.0 -5.651117,40.979595,0.0 -5.651304,40.979645,0.0 -5.651658,40.979889,0.0 -5.651994,40.980061,0.0 -5.652155,40.979958,0.0 -5.652367,40.979908,0.0 -5.652605,40.979778,0.0 -5.652683,40.979713,0.0 -5.653796,40.979733,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-A61B4A-5</styleUrl>
+				<name>Avda Salamanca</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.653619,40.97744800000001,0.0 -5.653941,40.977604,0.0 -5.65451,40.977722,0.0 -5.654628,40.977779,0.0 -5.654928,40.977901,0.0 -5.655137,40.977776,0.0 -5.656068,40.978542,0.0 -5.657012,40.979252,0.0 -5.657138000000001,40.97921,0.0 -5.657549000000001,40.979183000000006,0.0 -5.657806,40.979218,0.0 -5.657948,40.97929,0.0 -5.657919,40.979385,0.0 -5.657964,40.97945,0.0 -5.65809,40.979504,0.0 -5.658195,40.979519,0.0 -5.659496,40.979568,0.0 -5.661127,40.979294,0.0 -5.661384,40.97913700000001,0.0 -5.661588,40.979172,0.0 -5.662693,40.979042,0.0 -5.662972,40.97858,0.0 -5.663103,40.978466,0.0 -5.663382,40.978455,0.0 -5.663466,40.978462,0.0 -5.663503,40.978607,0.0 -5.663653,40.978645,0.0 -5.663825,40.978737,0.0 -5.663975,40.978867,0.0 -5.665075,40.978741,0.0 -5.665316,40.978558,0.0 -5.665314,40.97842,0.0 -5.666099,40.97781,0.0 -5.666102,40.97776,0.0 -5.666531,40.977398,0.0 -5.666682,40.97718,0.0 -5.666918,40.977036,0.0 -5.667049,40.977005,0.0 -5.669495,40.975067,0.0 -5.669812,40.975208,0.0 -5.669903,40.975197,0.0 -5.669975,40.975143,0.0 -5.669951,40.975098,0.0 -5.671343,40.974072,0.0 -5.671496,40.973934,0.0 -5.671877,40.973522,0.0 -5.672403,40.973331,0.0 -5.672513,40.973263,0.0 -5.67251,40.973091,0.0 -5.672604,40.972923,0.0 -5.672741,40.97281300000001,0.0 -5.673054,40.972801,0.0 -5.673116,40.972763,0.0 -5.673172,40.97281300000001,0.0 -5.676624,40.972797,0.0 -5.676651,40.972763,0.0 -5.676734,40.972763,0.0 -5.676764,40.972801,0.0 -5.67685,40.972805,0.0 -5.676877,40.972706,0.0 -5.676957,40.972641,0.0 -5.677113,40.97258,0.0 -5.677325,40.972553,0.0 -5.677461,40.97258,0.0 -5.677574,40.972622,0.0 -5.677912,40.972565,0.0 -5.680385,40.972088,0.0 -5.680492,40.971962,0.0 -5.680594,40.971745,0.0 -5.67939,40.97142,0.0 -5.678781,40.971153,0.0 -5.676984,40.970047,0.0 -5.677019,40.969994,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-A61B4A-5</styleUrl>
+				<name>Av. Federíco Anaya</name>
+				<ExtendedData>
+				</ExtendedData>
+				<description><![CDATA[<div dir="ltr">Carril compartido Bus-Taxi-Moto-Bici.<br>Es de sentido único, hacia el centro de la ciudad.</div>]]></description>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.65628,40.974625,0.0 -5.657637,40.972294,0.0 -5.658136,40.97131,0.0 -5.659536,40.969002,0.0</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</LanesZone>
+	<LanesZone>
+		<name>Zona-2: PASEO DE LA ESTACIÓN - ALDEHUELA</name>
+		<length>2,698 Km</length>
+		<color>#009D57</color>
+		<description><![CDATA[La Zona - 2, permite recorrer el trayecto desde la calle del tunel de la televisión, hasta el Aldehuela.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-009D57-5</styleUrl>
+				<name>Tunel televisión</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.654424,40.968685,0.0 -5.653598,40.968697,0.0 -5.653418,40.968731,0.0 -5.652951,40.968731,0.0 -5.652922,40.968822,0.0 -5.652994,40.96891,0.0 -5.65345,40.969337,0.0 -5.653276,40.969452,0.0 -5.653726000000001,40.97002,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+			<styleUrl>#line-009D57-5</styleUrl>
+			<name>Alamedilla</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.656516,40.966736,0.0 -5.657235,40.967133,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-009D57-5</styleUrl>
+			<name>Alamedilla - Jesuitas</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.656520000000001,40.95882,0.0 -5.656520000000001,40.958889,0.0 -5.65659,40.958969,0.0 -5.65721,40.959202,0.0 -5.65715,40.960461,0.0 -5.6572,40.960529,0.0 -5.65699,40.96328,0.0 -5.65719,40.963329,0.0 -5.65712,40.964649,0.0 -5.657040000000001,40.965221,0.0 -5.65683,40.965912,0.0 -5.65685,40.96601100000001,0.0 -5.65653,40.966702,0.0 -5.65572,40.967621,0.0 -5.65561,40.96764,0.0 -5.65444,40.968506,0.0 -5.654424,40.968662,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-009D57-5</styleUrl>
+			<name>Av. Aldehuela</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.656516,40.958832,0.0 -5.655486,40.958511,0.0 -5.65499,40.958397,0.0 -5.65451,40.958351,0.0 -5.654094,40.958344,0.0 -5.652922,40.958412,0.0 -5.650068,40.958923,0.0 -5.64951,40.959148,0.0 -5.649443,40.95908000000001,0.0 -5.649499,40.959019,0.0 -5.649204000000001,40.958130000000004,0.0 -5.649242000000001,40.958076,0.0 -5.649845,40.957985,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-009D57-5</styleUrl>
+			<name>Av. Aldehuela II</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.64943,40.959076,0.0 -5.646393,40.960686,0.0 -5.646388000000001,40.960686,0.0 -5.646388000000001,40.96069,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		</Folder>
+	</LanesZone>
+	<LanesZone>
+		<name>Zona-3: ALDEHUELA - CHAMBERI</name>
+		<length>3,950 Km</length>
+		<color>#F4B400</color>
+		<description><![CDATA[Éste tramo de carril bici une el Aldehuela con el barrio de Chamberi.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-F4B400-5</styleUrl>
+				<name>Puente Romano y paseo fluvial</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.671327,40.956207,0.0 -5.669047,40.959362,0.0 -5.668935,40.959225,0.0 -5.668527,40.959099,0.0 -5.667926,40.959007,0.0 -5.667041,40.959007,0.0 -5.666994000000001,40.95899200000001,0.0 -5.666861,40.958496,0.0 -5.666810000000001,40.958485,0.0 -5.666687,40.958145,0.0 -5.666526,40.958031,0.0 -5.666703,40.957508,0.0 -5.666354,40.95726,0.0 -5.666357,40.957169,0.0 -5.666054,40.95673,0.0 -5.66585,40.956638,0.0 -5.665737,40.956589,0.0 -5.664785,40.955643,0.0 -5.663179,40.954796,0.0 -5.661465000000001,40.954212,0.0 -5.66085,40.954193,0.0 -5.660689,40.954155,0.0 -5.660459,40.954296,0.0 -5.658018,40.954979,0.0 -5.657913,40.955093,0.0 -5.657009,40.955265,0.0 -5.656835,40.955357,0.0 -5.656446,40.955608,0.0 -5.656106,40.955738,0.0 -5.655156,40.956394,0.0 -5.654553,40.956615,0.0 -5.653359,40.956814,0.0 -5.652208,40.957088000000006,0.0 -5.649843,40.957886,0.0 -5.649829,40.957966,0.0 -5.649851,40.957981,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-F4B400-5</styleUrl>
+				<name>Puente Romano - P. Ignacio Ellacuría</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.67129,40.95628,0.0 -5.671459,40.956387,0.0 -5.67144,40.956547,0.0 -5.671247,40.956718,0.0 -5.671075,40.956795,0.0 -5.671099000000001,40.956951,0.0 -5.671072000000001,40.957066,0.0 -5.672239,40.957745,0.0 -5.672480000000001,40.95776,0.0 -5.672714,40.95803800000001,0.0 -5.672861,40.95816,0.0 -5.67454,40.959194,0.0 -5.674629,40.959179,0.0 -5.675232,40.958397,0.0 -5.675404000000001,40.958336,0.0 -5.675785,40.95826,0.0 -5.676144,40.958233,0.0 -5.677716,40.957687,0.0 -5.678022,40.957623,0.0 -5.678301,40.957592,0.0 -5.678572,40.957584,0.0 -5.678907,40.957626,0.0 -5.680313,40.957977,0.0 -5.682769000000001,40.958481,0.0 -5.682984,40.958496,0.0 -5.684019,40.958477,0.0 -5.685562,40.958233,0.0</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</LanesZone>
+	<LanesZone>
+		<name>Zona-4: ALDEHUELA - SANTA MARTA</name>
+		<length>2,229 Km</length>
+		<color>#3F5BA9</color>
+		<description><![CDATA[La Zona - 4, une el Aldehuela con Santa Marta de Tormes.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-3F5BA9-5</styleUrl>
+				<name>Santa Marta</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.625644,40.950146,0.0 -5.621502,40.95002,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-3F5BA9-5</styleUrl>
+				<name>Aldehuela - Santa Marta</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.643716,40.96122,0.0 -5.644223,40.961239,0.0 -5.644347,40.961178,0.0 -5.644679,40.960873,0.0 -5.645119,40.958076,0.0 -5.645039,40.957973,0.0 -5.644923,40.957878,0.0 -5.644795,40.957573,0.0 -5.644687,40.957443,0.0 -5.644277,40.957195,0.0 -5.64414,40.95713000000001,0.0 -5.643706,40.95682500000001,0.0 -5.643362,40.95656600000001,0.0 -5.643244,40.956409,0.0 -5.640838,40.952217,0.0 -5.640726,40.951942,0.0 -5.640203,40.951046,0.0 -5.639924,40.950844,0.0 -5.639833,40.950813,0.0 -5.637936,40.950607,0.0 -5.634862,40.950333,0.0 -5.634812,40.950363,0.0 -5.633664,40.950245,0.0</coordinates>
+				</LineString>
+			</Placemark>
+		</Folder>
+	</LanesZone>
+	<LanesZone>
+		<name>Zona-5: CHAMBERI - PIZARRALES - VILLAMAYOR</name>
+		<color>#000000</color>
+		<length>8,772 Km</length>
+		<description><![CDATA[La Zona - 5, comunica los barrios de Chamberi, Los Pizarrales con el pueblo de Villamayor llegando incluso al Helmántico.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>Campus Miguel de Unamuno</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.681874,40.958302,0.0 -5.681816000000001,40.958363,0.0 -5.68167,40.959198,0.0 -5.681406,40.960682,0.0 -5.681219,40.961735,0.0 -5.680673,40.964794,0.0 -5.680649,40.964916,0.0 -5.680464,40.964897,0.0 -5.68044,40.964993,0.0 -5.680354000000001,40.965061000000006,0.0 -5.680221,40.965164,0.0 -5.679981,40.965218,0.0 -5.679886,40.965401,0.0 -5.679909,40.965591,0.0 -5.679552,40.965919,0.0 -5.679858,40.96616,0.0 -5.679743,40.966362000000004,0.0 -5.6789,40.966869,0.0 -5.678427,40.967148,0.0 -5.677555,40.967701,0.0 -5.676355,40.96843,0.0 -5.675755,40.968781,0.0 -5.675597,40.96888,0.0 -5.67638,40.969604,0.0 -5.676575,40.969788,0.0 -5.676792,40.969826000000005,0.0 -5.677008,40.969986,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>Martín Gaite</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.680602,40.971748,0.0 -5.68086,40.971794,0.0 -5.681117,40.971771,0.0 -5.681251,40.97194700000001,0.0 -5.681337,40.972172,0.0 -5.681246,40.972347,0.0 -5.681176,40.972431,0.0 -5.681375,40.973541,0.0 -5.681595,40.973896,0.0 -5.684475,40.975891000000004,0.0 -5.684223,40.976082,0.0 -5.684298,40.976143,0.0 -5.684261,40.97628,0.0 -5.684341,40.976425,0.0 -5.682973,40.978092,0.0 -5.682501,40.978504,0.0 -5.681804,40.978874,0.0 -5.677485,40.980804,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>Urb. Mariano Rodríguez</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.684502,40.975899,0.0 -5.684931,40.975994,0.0 -5.685039,40.976433,0.0 -5.686734,40.978344,0.0 -5.690103,40.980286,0.0 -5.695059,40.98112900000001,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>Helmántico</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.66563,40.992817,0.0 -5.665845,40.99445,0.0 -5.666209,40.996346,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>Los Almendros - Parque Valcuevo</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.715509,41.01709000000001,0.0 -5.729136,41.029945,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-000000-5</styleUrl>
+				<name>La Platina-1</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.68064,40.964909,0.0 -5.68057,40.96529,0.0 -5.68065,40.96537,0.0 -5.68231,40.965389,0.0 -5.68264,40.96534,0.0 -5.6836,40.964939,0.0 -5.68381,40.964741,0.0 -5.68404,40.964279,0.0 -5.68553,40.963341,0.0 -5.68668,40.962879,0.0 -5.691106,40.961468,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+			<styleUrl>#line-000000-5</styleUrl>
+			<name>La Platina-2</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.69112,40.961449,0.0 -5.69189,40.961071,0.0 -5.69192,40.96077,0.0 -5.69201,40.960659,0.0 -5.69218,40.960579,0.0 -5.69241,40.960602,0.0 -5.69256,40.96067,0.0 -5.69273,40.960609,0.0 -5.69279,40.960732,0.0 -5.69265,40.960861,0.0 -5.69259,40.96104,0.0 -5.692991,40.961651,0.0 -5.69308,40.96162,0.0 -5.69316,40.961739,0.0 -5.69308,40.9618,0.0 -5.69354,40.962528,0.0 -5.693603,40.962547,0.0 -5.693648,40.962524,0.0 -5.69373,40.962639,0.0 -5.69368,40.962688,0.0 -5.6941,40.963341,0.0 -5.69438,40.963421,0.0 -5.694652,40.963326,0.0 -5.695403,40.963062,0.0 -5.69539,40.962921,0.0 -5.69558,40.962921,0.0 -5.69558,40.96299,0.0 -5.696062,40.962898,0.0 -5.696561,40.962826,0.0 -5.69764,40.96273,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-000000-5</styleUrl>
+			<name>La Platina-3</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.69183,40.961109,0.0 -5.69195,40.96124300000001,0.0 -5.692121,40.961151,0.0 -5.69225,40.961163,0.0 -5.692347,40.961227,0.0 -5.692733,40.96172,0.0 -5.692733,40.961777,0.0 -5.692668,40.961792,0.0 -5.692744,40.961914,0.0 -5.692819,40.961899,0.0 -5.69284,40.961929,0.0 -5.693312,40.962627,0.0 -5.693312,40.962669,0.0 -5.69328,40.962692,0.0 -5.693366,40.962814,0.0 -5.693441,40.962814,0.0 -5.693838,40.963406,0.0 -5.693859,40.96347,0.0 -5.693816,40.963631,0.0 -5.693741,40.963722,0.0 -5.693677,40.963753,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#line-0000FF-5</styleUrl>
+			<name>La Platina-4</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.693853,40.96339,0.0 -5.694057,40.96328,0.0</coordinates>
+			</LineString>
+		</Placemark>			
+		</Folder>
+	</LanesZone>
+	<LanesZone>
+		<name>Zona-6: CTRA. MADRID - EL ZURGUEN</name>
+		<length>4,848 Km</length>
+		<color>#7C3592</color>
+		<description><![CDATA[La Zona - 6 conecta la parte baja del paso fluvial con el barrio del Zurguén y Aldeatejada.]]></description>
+		<Folder>
+			<Placemark>
+				<styleUrl>#line-7C3592-5</styleUrl>
+				<name>Zurguén - Ctra Aldeatejada</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.676737,40.952225,0.0 -5.677204,40.950645,0.0 -5.677778,40.948723,0.0 -5.678306,40.946522,0.0 -5.679151,40.94382900000001,0.0 -5.679449,40.943031,0.0 -5.679704,40.94265,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-7C3592-5</styleUrl>
+				<name>Ctra Aldeatejada</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.683885000000001,40.936436,0.0 -5.684765,40.93360500000001,0.0 -5.685173,40.932186,0.0 -5.68536,40.931824,0.0 -5.687313,40.929535,0.0 -5.688273,40.928284,0.0 -5.688971,40.927563,0.0</coordinates>
+				</LineString>
+			</Placemark>	
+			<Placemark>
+				<styleUrl>#line-7C3592-5</styleUrl>
+				<name>Enlace Aldeatejada</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.679556,40.942856,0.0 -5.679342,40.942493,0.0 -5.679476,40.942215,0.0 -5.67984,40.941704,0.0 -5.680983,40.941017,0.0 -5.681117,40.940605,0.0 -5.681123000000001,40.940231,0.0 -5.68123,40.939911,0.0 -5.68168,40.939671,0.0 -5.682265,40.939526,0.0 -5.682855,40.938377,0.0 -5.683005,40.937923,0.0 -5.683874000000001,40.936443,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#line-7C3592-5</styleUrl>
+				<name>Puente Romano - Zurguén</name>
+				<ExtendedData>
+				</ExtendedData>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>-5.671312,40.956272,0.0 -5.671992,40.956448,0.0 -5.672175,40.956257,0.0 -5.672674,40.956177,0.0 -5.672938,40.956177,0.0 -5.673233000000001,40.956085,0.0 -5.673685,40.956139,0.0 -5.674004,40.956036,0.0 -5.674798,40.956253,0.0 -5.67486,40.956329,0.0 -5.675085,40.956409,0.0 -5.675145,40.956394,0.0 -5.675659,40.955502,0.0 -5.675727,40.95544100000001,0.0 -5.675758,40.95496,0.0 -5.675798,40.954849,0.0 -5.675774,40.954292,0.0 -5.675699,40.953926,0.0 -5.675796,40.952507,0.0 -5.675986,40.952087,0.0 -5.676447,40.952366000000005,0.0</coordinates>
+				</LineString>
+			</Placemark>
+		<Placemark>
+			<styleUrl>#line-7C3592-5</styleUrl>
+			<name>Pte Romano - Pte Príncipe de Asturias</name>
+			<ExtendedData>
+			</ExtendedData>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>-5.671236,40.95623,0.0 -5.670925,40.956306,0.0 -5.670673,40.956337,0.0 -5.670539,40.95628,0.0 -5.66983,40.955837,0.0 -5.668977,40.955502,0.0 -5.668865,40.955578,0.0 -5.668033,40.955338,0.0 -5.667014,40.954983,0.0 -5.6668210000000006,40.954998,0.0 -5.666682,40.954937,0.0 -5.666327,40.954624,0.0 -5.66497,40.95406,0.0 -5.663586,40.953438,0.0 -5.662326,40.953049,0.0 -5.662138,40.952942,0.0 -5.661939,40.952774,0.0</coordinates>
+			</LineString>
+		</Placemark>
+		</Folder>
+	</LanesZone>
+</kml>

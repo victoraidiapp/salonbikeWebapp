@@ -1,7 +1,17 @@
 // JavaScript Document
 var DataManager={
 	getBikeLanes:function(callBack){
-		callBack(23);
+		$.ajax({
+    type: "GET",
+    url: "assets/BikeLanesZones.xml",
+    dataType: "xml",
+    success: function(xml){
+		callBack($(xml));
+		
+	}
+  });
+		
+		
 	},
 	getBikeStations:function(callBack){
 		

@@ -76,7 +76,13 @@ var MapManager={
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeStationDialog:function(station){
-		
+		$.UIPopup({
+			id:'bsDialog',
+			title:'Nombre de la Station',
+			message:'<div class="dialogLine"><span class="icon_algo"></span></div>',
+			cancelButton:'Volver',
+			continueButton:'Ruta'
+		})
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeLaneDialog:function(lane){

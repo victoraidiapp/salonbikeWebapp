@@ -81,6 +81,9 @@ var MapManager={
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeLaneDialog:function(lane){
 		
+	},
+	showBikeLanesList:function(){
+		
 	}
 	
 	

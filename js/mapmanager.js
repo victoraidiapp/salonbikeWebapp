@@ -52,8 +52,39 @@ var MapManager={
 		//Aquí hay que pintar las lineas recorriendo los nodos del jQuery parseado desde el XML
 			
 			this.BikeLanes.find("LanesZone").each(function(){
-			console.log("El título de esta zona es "+$(this).children("name").text());	
-			})
+				// Compruebo que accedo al los hijos del nodo
+				console.log("El título de esta zona es "+$(this).children("name").text());
+				console.log("Distancia "+$(this).children("length").text());
+				console.log("Descripccion "+$(this).children("description").text());
+				var color = $(this).children("color").text();
+				console.log("Color: "+color);
+				
+				$(this).find("Folder").each(function(){
+					$(this).find("Placemark").each(function(){
+						// Compruebo que accedo a los hijos del nodo
+						console.log("Nombre"+$(this).children("name").text())
+						var tipoLinea = $(this).children("styleUrl").text();
+						console.log("Tipo de Línea: " + tipoLinea);
+						
+						$(this).find("LineString").each(function(){
+							var coordinates = $(this).children("coordinates").text();
+							var separador = coordinates.split(",0.0");
+							console.log("Coordenadas: "+separador);
+							var grosorLinea = $(this).children("tessellate").text();
+							console.log("Grosor de linea: " + grosorLinea);
+							var flagCoordinates = [new google.maps.LatLng(separador)];
+							this.BikeLanesPolyLine = ({
+								path: flagCoordinates,
+								stokeColor: color,
+								strokeOpacity: 1.0,
+								strokeWeigth: grosorLinea
+							})
+							this.BikeLanesPolyLine.setMap(this.mapObject);
+						})
+					})
+				})
+
+			})	
 			//this.showBikeLaneLayer();
 			return;
 		}

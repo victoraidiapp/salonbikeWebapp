@@ -18,10 +18,10 @@ var MapManager={
                 $("#"+mapId).height(height-50);
                 $("#"+mapId).width(width);
 		var mapOptions = {
-			    zoom: 14,
-			    center: new google.maps.LatLng(40.9741682, -5.6504373)
+			    zoom: 13,
+			    center: new google.maps.LatLng(40.9705347,-5.6637995)
 			  };
-		new google.maps.Map(document.getElementById(mapId),
+		MapManager.mapObject=new google.maps.Map(document.getElementById(mapId),
 			      mapOptions);
 		
 	},
@@ -40,19 +40,22 @@ var MapManager={
 		
 		
 		LoadingDialog.show("Cargando contenido");
-		if(this.BikeLanesPolyLine.length>0){//Si ya tenemos las lineas guardadas, simplemente las pintamos
+		console.log("El tmaaño de las lineas es "+MapManager.BikeLanesPolyLine.length);
+		if(MapManager.BikeLanesPolyLine.length>0){//Si ya tenemos las lineas guardadas, simplemente las pintamos
+		
 		for(l in this.BikeLanesPolyLine){
 		this.BikeLanesPolyLine[l].setMap(this.mapObject);//Pintamos las lineas en el mapa	
 		}
+		MapManager.flagLanesLayer=true;
 		LoadingDialog.hide();
 			return;
 		}
 		
-		if(this.BikeLanes!=null){//Ya tenemos los datos convertidos en el objeto jQuery pero no los hemos pintado
+		if(MapManager.BikeLanes!=null){//Ya tenemos los datos convertidos en el objeto jQuery pero no los hemos pintado
 		//Aquí hay que pintar las lineas recorriendo los nodos del jQuery parseado desde el XML
-			
-			this.BikeLanes.find("LanesZone").each(function(){
-				//console.log("El título de esta zona es "+$(this).children("name").text());
+			console.log("Intentamos obtener");
+			MapManager.BikeLanes.find("LanesZone").each(function(){
+				console.log("El título de esta zona es "+$(this).children("name").text());
 				//console.log("Distancia "+$(this).children("length").text());
 				//console.log("Descripccion "+$(this).children("description").text());
 				var color = $(this).children("color").text();
@@ -64,29 +67,43 @@ var MapManager={
 						//console.log("Tipo de Línea: " + tipoLinea);
 						$(this).find("LineString").each(function(){
 							var coordinates = $(this).children("coordinates").text();
-							var separador = coordinates.split(",0.0");
-							//console.log("Coordenadas: "+separador);
-							var grosorLinea = $(this).children("tessellate").text();
-							var flagCoordinates = [new google.maps.LatLng(separador)];
+							var pareja = coordinates.split(",0.0");
+							console.log("Coordenadas: "+separador);
+							
+							
+							var flagCoordinates =new Array();
+							for( c in pareja){
+								var ll=pareja[c].split(",");
+								//console.log("Vamos a añadir las coordenadas "+ll[0]+","+ll[1]);
+								if(typeof(ll[1])=="undefined"){
+									//console.log("Esta no la añadimos "+separador[c]);
+								continue;	
+								}
+								flagCoordinates.push(new google.maps.LatLng(parseFloat(ll[1]), parseFloat(ll[0])))
+							}
 							var polyline = new google.maps.Polyline ({
 								path: flagCoordinates,
-								stokeColor: color,
+								strokeColor: color,
 								strokeOpacity: 1.0,
-								strokeWeigth: grosorLinea
+								strokeWeight: 5
 							})
-							polyline.setMap(MapManager.mapObject);
+							MapManager.BikeLanesPolyLine.push(polyline);
+							//polyline.setMap(MapManager.mapObject);
+							
 						})
+						
 					})
+					
 				})
 			})		
-			//this.showBikeLaneLayer();
+			MapManager.showBikeLaneLayer();
 			return;
 		}
 		console.log("Vamos a obtener los carriles");
 		
 		DataManager.getBikeLanes(function(b){
 			MapManager.BikeLanes=b;
-			//console.log("Ya estamos de vuelta");
+			console.log("Ya estamos de vuelta");
 			MapManager.showBikeLaneLayer();
 			
 		});
@@ -96,6 +113,9 @@ var MapManager={
 	},
 	//Esta función ocultará la capa con los carriles bici,
 	hideBikeLaneLayer:function(){
+		for(l in this.BikeLanesPolyLine){
+		this.BikeLanesPolyLine[l].setMap(null);//Pintamos las lineas en el mapa	
+		}
 		MapManager.flagLanesLayer=false;
 		
 	},

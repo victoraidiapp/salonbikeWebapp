@@ -49,8 +49,11 @@ var app = {
 		console.log("Pulsado carril.");
 		//alert("Paramos un momento");
 		$(this).toggleClass("selected");
-			
+			if(MapManager.flagLanesLayer){
+				MapManager.hideBikeLaneLayer()
+			}else{
 		MapManager.showBikeLaneLayer();
+			}
 		return false;
 	}else if($(this).hasClass("rutabici")){
 		console.log("Pulsado Ruta en bici.");

@@ -10,11 +10,13 @@ manejadores:function(){
 	
 },
 show:function(texto){
-	$('article.current .loading').text(texto).show();
+	console.log(";ostramos el dialogo");
+	$('article.current .loading').text(texto).addClass('visible');;
 	$('article.current .loading').nextAll().addClass('whenloading');
 },
-hide:function(){
-	$('article.current .loading').hide();	
+hide:function(t){
+	console.log("Ocultamos");
+	$('article.current .loading').delay(t).removeClass('visible');	
 	$('.whenloading').removeClass('whenloading');
 }
 	

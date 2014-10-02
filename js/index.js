@@ -23,6 +23,7 @@ var app = {
         this.manejadores();
 		LoadingDialog.init();
 		$.UIGoToArticle("#mapa");
+		
 		setTimeout(MapManager.init("gmapa"),3000);
 		
 		
@@ -40,7 +41,12 @@ var app = {
 		jQuery(document).on("singletap",".tabbar .button", function(event){
 			//event.stopPropagation();
 	if($(this).hasClass("estacion")){
-		console.log("Pulsado estacion.");
+		$(this).toggleClass("selected");
+			if(MapManager.flagStationLayer){
+				MapManager.hideBikeStationLayer()
+			}else{
+		MapManager.showBikeStationLayer();
+			}
 		return false;
 	}else if($(this).hasClass("ruta")){
 		console.log("Pulsado ruta.");

@@ -8,7 +8,9 @@ var MapManager={
 	mapObject:null,
 	BikeLanes:null,
 	BikeLanesPolyLine:new Array(),//Este array contiene una colección de google.maps.Polyline que luego se pintan en el mapa con el método setMap
+	
 	BikeStations:null,
+	BikeStationsMarker:new Array(),
 	//Esta función inicializa y pinta el mapa Google, para ello recibe el identificador del contenedor donde pintar el mapa
 	init:function(mapId){
 		var infoWindow=new google.maps.InfoWindow();
@@ -27,13 +29,44 @@ var MapManager={
 	},
 	//Esta función mostrará la capa con los intercambiadores
 	showBikeStationLayer:function(){
+		LoadingDialog.show("Cargando contenido");
+		if(MapManager.BikeStationsMarker.length>0){
+			for(m in MapManager.BikeStationsMarker){
+				MapManager.BikeStationsMarker[m].setMap(MapManager.mapObject);	
+			}
+		MapManager.flagStationLayer=true;
+		LoadingDialog.hide();
+		return;	
+		}
 		
+		if(MapManager.BikeStations!=null){
+			
+		MapManager.BikeStations.find("parada").each(function(){
+			console.log("Procesamos la parada "+$(this).attr("nombre"));
+			var marker = new google.maps.Marker({
+    position: new google.maps.LatLng($(this).attr("lat"),$(this).attr("lng")),
+	title:$(this).attr("codigo"),
+	icon:'icons/show_bike_stations.png'
+  });
+  MapManager.BikeStationsMarker.push(marker);
+		})
+		MapManager.showBikeStationLayer();
+		return;
+		}
+		
+		DataManager.getBikeStations(function(bs){
+			MapManager.BikeStations=bs;
+			MapManager.showBikeStationLayer();
+		})
 			
 		
 	},
 	//Esta función ocultará la capa con los intercambiadores,
 	hideBikeStationLayer:function(){
-		
+		for(m in MapManager.BikeStationsMarker){
+				MapManager.BikeStationsMarker[m].setMap(null);	
+			}
+		MapManager.flagStationLayer=false;
 	},
 	//Esta función mostrará la capa con los carriles bici
 	showBikeLaneLayer:function(){

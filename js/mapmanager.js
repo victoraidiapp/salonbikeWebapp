@@ -101,7 +101,7 @@ var MapManager={
 						$(this).find("LineString").each(function(){
 							var coordinates = $(this).children("coordinates").text();
 							var pareja = coordinates.split(",0.0");
-							console.log("Coordenadas: "+separador);
+							
 							
 							
 							var flagCoordinates =new Array();

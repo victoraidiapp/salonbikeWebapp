@@ -159,13 +159,16 @@ var MapManager={
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeStationDialog:function(station){
 		
-		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
 		
+		
+		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
+		MapManager.getDistanceToStation($station.attr("lat"),$station.attr("lng"));
 		$.UIPopup({
 			id:'bsDialog',
 			title:$station.attr("nombre"),
 			message:'<div class="dialogLine"><span class="icon icon_candados"></span>Candados disponibles: <strong>'+$station.attr("candadosLibres")+'</strong></div>'+
-			'<div class="dialogLine"><span class="icon icon_bicis"></span>Bicis disponibles: <strong>'+$station.attr("bicicletas")+'</strong></div>',
+			'<div class="dialogLine"><span class="icon icon_bicis"></span>Bicis disponibles: <strong>'+$station.attr("bicicletas")+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_length"></span>Distancia a estación: <strong id="distanceToStation" class="calculating"></strong></div>',
 			cancelButton:'Volver',
 			continueButton:'Ruta'
 		})
@@ -176,6 +179,14 @@ var MapManager={
 	},
 	showBikeLanesList:function(){
 		
+	},
+	getDistanceToStation:function(stLat,stLng){
+		navigator.geolocation.getCurrentPosition(function(position){
+			console.log("Hemos obtenido la posición");
+			DataManager.getDistance(stLat,stLng,position.coords.latitude ,position.coords.longitude,function(d){
+				$("#distanceToStation").text(d).removeClass("calculating");
+			});
+		})
 	}
 	
 	

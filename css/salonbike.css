@@ -77,4 +77,23 @@
 	vertical-align:middle;
 	display:inline-block;
 	}
+	
+	.dialogLine .icon_length{
+	background-image: url('../icons/length.png');
+	height: 48px;
+	width: 48px;		
+	background-size:100%;
+	vertical-align:middle;
+	display:inline-block;
+	}
+	
+	
+	.calculating{
+		background-image: url('../img/ajax-loader.gif');
+		opacity:0.5;
+		height: 48px;
+	width: 48px;
+	background-size:100%;
+	display:inline-block;
+	}
 

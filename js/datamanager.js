@@ -23,6 +23,23 @@ var DataManager={
 	}
 	
 	})
+	},
+	getDistance:function(sourcelat,sourcelng,targetlat,targetlng,callBack){
+	
+	var request="http://maps.googleapis.com/maps/api/directions/json?origin="+sourcelat+","+sourcelng+"&destination="+targetlat+","+targetlng+"&sensor=false&mode=walking";
+	$.ajax({
+			type:"GET",
+			url:"http://maps.googleapis.com/maps/api/directions/json?origin="+sourcelat+","+sourcelng+"&destination="+targetlat+","+targetlng+"&sensor=false&mode=walking",
+			dataType:"json",
+			success:function(r){
+				console.log("La petición es "+request);
+				console.log("El resultado es "+r);
+				callBack(r["routes"][0]["legs"][0]["distance"]["text"]);
+	}
+	
+	})
+	
+		
 	}
 	
 };

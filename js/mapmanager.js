@@ -25,6 +25,7 @@ var MapManager={
 			  };
 		MapManager.mapObject=new google.maps.Map(document.getElementById(mapId),
 			      mapOptions);
+				  
 		
 	},
 	//Esta función mostrará la capa con los intercambiadores
@@ -47,6 +48,9 @@ var MapManager={
     position: new google.maps.LatLng($(this).attr("lat"),$(this).attr("lng")),
 	title:$(this).attr("codigo"),
 	icon:'icons/show_bike_stations.png'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    MapManager.showBikeStationDialog(marker.getTitle());
   });
   MapManager.BikeStationsMarker.push(marker);
 		})
@@ -154,10 +158,14 @@ var MapManager={
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeStationDialog:function(station){
+		
+		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
+		
 		$.UIPopup({
 			id:'bsDialog',
-			title:'Nombre de la Station',
-			message:'<div class="dialogLine"><span class="icon_algo"></span></div>',
+			title:$station.attr("nombre"),
+			message:'<div class="dialogLine"><span class="icon icon_candados"></span>Candados disponibles: <strong>'+$station.attr("candadosLibres")+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_bicis"></span>Bicis disponibles: <strong>'+$station.attr("bicicletas")+'</strong></div>',
 			cancelButton:'Volver',
 			continueButton:'Ruta'
 		})

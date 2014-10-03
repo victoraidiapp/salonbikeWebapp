@@ -51,4 +51,30 @@
       display: block;
       height: 100%;
     }
+	
+	.dialogLine{
+	padding-left:10px;
+		
+	}
+	
+	.dialogLine .icon{
+	margin-right:10px;	
+	}
+	.dialogLine .icon_candados{
+	background-image: url('../icons/locks_availables.png');
+	height: 48px;
+	width: 48px;		
+	background-size:100%;
+	vertical-align:middle;
+	display:inline-block;
+	}
+	
+	.dialogLine .icon_bicis{
+	background-image: url('../icons/bikes_availables.png');
+	height: 48px;
+	width: 48px;		
+	background-size:100%;
+	vertical-align:middle;
+	display:inline-block;
+	}
 

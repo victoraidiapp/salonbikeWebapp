@@ -65,6 +65,8 @@ var app = {
 		console.log("Pulsado Ruta en bici.");
 		return false;
 	}else if($(this).hasClass("listado")){
+		$(this).toggleClass("selected");
+		MapManager.showLaneList();
 		console.log("Pulsado Listado.");
 		return false;
 	}

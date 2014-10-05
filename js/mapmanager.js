@@ -193,6 +193,30 @@ var MapManager={
 				$("#distanceToStation").text(d).removeClass("calculating");
 			});
 		})
+	},
+	
+	//Esta función mostrará el listado de los carriles bici
+	showLaneList:function() {
+		//Condición 1: Si el role-content del article listaZonas ya tiene algo, muestralo
+		
+
+		//Condicion 2: Si mapmanager.bikelane !=null recorrer el DOM y coger los títulos y añadirlos a un ul en el role-content del article del listado de mapas
+		
+		if(MapManager.BikeLanes!=null){
+			console.log("Obtenemos las zonas");
+			MapManager.BikeLanes.find("LanesZone").each(function(){
+				var $zones = $(this).children("name").text();
+				console.log("El título de esta zona es "+$zones);
+				$.UIPopup({
+					id:'zonesDialoges',
+					title:'ZONAS BICI',
+					message:'<div class="dialogLine"><strong>'+$zones+'</strong></div>'
+				})							
+			})
+		}
+		
+		//Al final si no se ha cumplido ninguna de las dos condiciones habrá que hacer una llamada a DataManager.getBikeLanes
+		
 	}
 	
 	

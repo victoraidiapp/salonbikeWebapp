@@ -51,7 +51,9 @@
       display: block;
       height: 100%;
     }
-	
+	article > section{
+	padding-bottom:0px!important;	
+	}
 	.dialogLine{
 	padding-left:10px;
 		

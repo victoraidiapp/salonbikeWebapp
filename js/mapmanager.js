@@ -21,7 +21,13 @@ var MapManager={
                 $("#"+mapId).width(width);
 		var mapOptions = {
 			    zoom: 13,
-			    center: new google.maps.LatLng(40.9705347,-5.6637995)
+			    center: new google.maps.LatLng(40.9705347,-5.6637995),
+				maxZoom:15,
+				minZoom:12,
+				//overviewMapControl:false,
+				streetViewControl:false,
+				//draggable:false,
+				mapTypeControl:false
 			  };
 		MapManager.mapObject=new google.maps.Map(document.getElementById(mapId),
 			      mapOptions);

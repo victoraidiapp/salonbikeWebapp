@@ -42,8 +42,14 @@ var app = {
 			//event.stopPropagation();
 	if($(this).hasClass("estacion")){
 		$(this).toggleClass("selected");
+		if(MapManager.flagLanesList){
+		MapManager.hideLaneList();	
+		$(".tabbar .listado").removeClass("selected");
+		}
+		
 			if(MapManager.flagStationLayer){
-				MapManager.hideBikeStationLayer()
+				MapManager.hideBikeStationLayer();
+				
 			}else{
 		MapManager.showBikeStationLayer();
 			}
@@ -55,6 +61,10 @@ var app = {
 		console.log("Pulsado carril.");
 		//alert("Paramos un momento");
 		$(this).toggleClass("selected");
+		if(MapManager.flagLanesList){
+		MapManager.hideLaneList();	
+		$(".tabbar .listado").removeClass("selected");
+		}
 			if(MapManager.flagLanesLayer){
 				MapManager.hideBikeLaneLayer()
 			}else{
@@ -66,7 +76,11 @@ var app = {
 		return false;
 	}else if($(this).hasClass("listado")){
 		$(this).toggleClass("selected");
+		if(MapManager.flagLanesList){
+		MapManager.hideLaneList();	
+		}else{
 		MapManager.showLaneList();
+		}
 		console.log("Pulsado Listado.");
 		return false;
 	}

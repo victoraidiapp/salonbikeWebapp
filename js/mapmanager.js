@@ -5,6 +5,7 @@ var MapManager={
 	//En este objeto almacenaremos el mapa de Google.
 	flagStationLayer:false,
 	flagLanesLayer:false,
+	flagLanesList:false,
 	mapObject:null,
 	BikeLanes:null,
 	BikeLanesPolyLine:new Array(),//Este array contiene una colección de google.maps.Polyline que luego se pintan en el mapa con el método setMap
@@ -194,30 +195,35 @@ var MapManager={
 			});
 		})
 	},
+	hideLaneList:function(){
+		MapManager.flagLanesList=false;
+		$.UIGoToArticle("#mapa");
+	},
 	
 	//Esta función mostrará el listado de los carriles bici
 	showLaneList:function() {
 		//Condición 1: Si el role-content del article listaZonas ya tiene algo, muestralo
 		if($("#listaZonas .role-content ul").length>0){
 			$.UIGoToArticle("#listaZonas");
+			MapManager.flagLanesList=true;
 			return;
 		}
 
 		//Condicion 2: Si mapmanager.bikelane !=null recorrer el DOM y coger los títulos y añadirlos a un ul en el role-content del article del listado de mapas
 		
 		if(MapManager.BikeLanes!=null){
-			$("#listaZonas .role-content").append("<ul><span><strong>ZONAS BICI</strong><br><br></span></ul>");		
+			$("#listaZonas .role-content").append("<ul class='list'><span><strong>ZONAS BICI</strong><br><br></span></ul>");		
 			console.log("Obtenemos las zonas");
 			MapManager.BikeLanes.find("LanesZone").each(function(){
 				var $zones = $(this).children("name").text();
 				var $color = $(this).children("color").text();
 				console.log("El título de esta zona es "+$zones);
 				console.log("Color: "+$color);
-				$("#listaZonas .role-content ul").append(''+$zones+'');			
-				$("#listaZonas .role-content li").css("font-size","18px");			
+				$("#listaZonas .role-content ul").append('<li style="background-color:'+$color+';">'+$zones+'</li>');			
+				//$("#listaZonas .role-content li").css("font-size","18px");			
 			})
 			// Supongo que esto hay que quitarlo por el toggle en el index.js
-			$("#mapa").css("visibility","hidden");
+			
 		}
 		
 		DataManager.getBikeLanes(function(b){

@@ -61,7 +61,7 @@
          		tabs : 5,
          		imagePath : "icons/",
          		icons : ["estacion", "ruta", "carril", "rutabici", "listado"],
-         		labels : ["Estaciones", "Ruta", "Carril bici", "Ruta bici", "Listado"],
+         		labels : ["Estaciones", "Ruta", "Carril bici", "Ruta bici", "listaZonas"],
          		//selected : 2
       		};
       		$.UITabbar(opts);
@@ -70,13 +70,14 @@
         	console.log('Se inició el mapa?');        	
     	});  	   		
   		</script>
-  
-  	<article id="mapa" class="current">
+  <nav class="current"></nav>
+  	<article id="mapa" class="current navigable">
     	<section>
         	<div class="role-content" id="gmapa"></div>
         </section>
     </article>
-  	<article id="listaZonas">
+    <nav class="next"></nav>
+  	<article id="listaZonas" class="next navigable">
     <section>
         	<div class="role-content"></div>
         </section>

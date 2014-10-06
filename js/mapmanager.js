@@ -213,9 +213,8 @@ var MapManager={
 				var $color = $(this).children("color").text();
 				console.log("El título de esta zona es "+$zones);
 				console.log("Color: "+$color);
-				$("#listaZonas .role-content ul").append("<li>'"+$zones+"'</li>");
-				// No coge el color, no se si es así, si pongo un color html sí lo coge
-				$("#listaZonas .role-content li").css({"font-size":"18px", "background":"'"+$color+"'"});			
+				$("#listaZonas .role-content ul").append(''+$zones+'');			
+				$("#listaZonas .role-content li").css("font-size","18px");			
 			})
 			// Supongo que esto hay que quitarlo por el toggle en el index.js
 			$("#mapa").css("visibility","hidden");

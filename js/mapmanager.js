@@ -9,7 +9,7 @@ var MapManager={
 	mapObject:null,
 	BikeLanes:null,
 	BikeLanesPolyLine:new Array(),//Este array contiene una colección de google.maps.Polyline que luego se pintan en el mapa con el método setMap
-	
+	BikeLanesMarker:new Array(),
 	BikeStations:null,
 	BikeStationsMarker:new Array(),
 	//Esta función inicializa y pinta el mapa Google, para ello recibe el identificador del contenedor donde pintar el mapa
@@ -99,6 +99,7 @@ var MapManager={
 		//Aquí hay que pintar las lineas recorriendo los nodos del jQuery parseado desde el XML
 			console.log("Intentamos obtener");
 			MapManager.BikeLanes.find("LanesZone").each(function(){
+				var laneMarker=false;
 				console.log("El título de esta zona es "+$(this).children("name").text());
 				//console.log("Distancia "+$(this).children("length").text());
 				//console.log("Descripccion "+$(this).children("description").text());
@@ -119,18 +120,36 @@ var MapManager={
 							for( c in pareja){
 								var ll=pareja[c].split(",");
 								//console.log("Vamos a añadir las coordenadas "+ll[0]+","+ll[1]);
+															
 								if(typeof(ll[1])=="undefined"){
 									//console.log("Esta no la añadimos "+separador[c]);
 								continue;	
 								}
 								flagCoordinates.push(new google.maps.LatLng(parseFloat(ll[1]), parseFloat(ll[0])))
 							}
+							var $icons;
+							if(!laneMarker){
+								$icons=[{
+								  icon: {    path: google.maps.SymbolPath.CIRCLE,fillColor:color,scale:10,strokeColor:color  },
+								  offset: '100%'
+								},
+								{
+								  icon: {    path: google.maps.SymbolPath.CIRCLE,fillColor:color,scale:4,strokeColor:color  },
+								  offset: '100%'
+								}];
+								laneMarker=true;
+							}
 							var polyline = new google.maps.Polyline ({
 								path: flagCoordinates,
 								strokeColor: color,
 								strokeOpacity: 1.0,
-								strokeWeight: 5
+								strokeWeight: 5,
+								icons: $icons
 							})
+							google.maps.event.addListener(polyline, 'click', function()
+								  {
+									MapManager.showBikeLaneDialog(color);
+								  });
 							MapManager.BikeLanesPolyLine.push(polyline);
 							//polyline.setMap(MapManager.mapObject);
 							
@@ -181,12 +200,12 @@ var MapManager={
 		})
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
-	showBikeLaneDialog:function(lane){
-		
+	showBikeLaneDialog:function(laneColor){
+		console.log("Buscamos el color "+laneColor);
+		var $lane=MapManager.BikeLanes.find('color:contains("'+laneColor+'")').parent();
+		console.log("El lane seleccionado es "+$lane.children("name").text());
 	},
-	showBikeLanesList:function(){
-		
-	},
+	
 	getDistanceToStation:function(stLat,stLng){
 		navigator.geolocation.getCurrentPosition(function(position){
 			console.log("Hemos obtenido la posición");

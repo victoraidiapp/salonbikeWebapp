@@ -189,6 +189,9 @@ var MapManager={
 		
 		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
 		MapManager.getDistanceToStation($station.attr("lat"),$station.attr("lng"));
+		var $href='maps://maps.apple.com/?daddr='+$station.attr("lat")+','+$station.attr("lng")+'&directionsmode=walking';
+		
+		//$href='comgooglemaps://?daddr='+$station.attr("lat")+','+$station.attr("lng")+'&directionsmode=walking';
 		$.UIPopup({
 			id:'bsDialog',
 			title:$station.attr("nombre"),
@@ -196,7 +199,10 @@ var MapManager={
 			'<div class="dialogLine"><span class="icon icon_bicis"></span>Bicis disponibles: <strong>'+$station.attr("bicicletas")+'</strong></div>'+
 			'<div class="dialogLine"><span class="icon icon_length"></span>Distancia a estación: <strong id="distanceToStation" class="calculating"></strong></div>',
 			cancelButton:'Volver',
-			continueButton:'Ruta'
+			continueButton:'Ruta',
+			callback:function(){
+				window.open($href, "_system");
+			}
 		})
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado

@@ -210,6 +210,17 @@ var MapManager={
 		console.log("Buscamos el color "+laneColor);
 		var $lane=MapManager.BikeLanes.find('color:contains("'+laneColor+'")').parent();
 		console.log("El lane seleccionado es "+$lane.children("name").text());
+		
+		$.UIPopup({
+			id:'bsDialog',
+			title:'<p style="background:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</p>',
+			message:'<div class="dialogLine"><span class="icon length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>',
+			cancelButton:'Volver',
+			continueButton:'Ruta',
+			callback:function(){
+				window.open($href, "_system");
+			}
+		})
 	},
 	
 	getDistanceToStation:function(stLat,stLng){

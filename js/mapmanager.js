@@ -271,7 +271,32 @@ var MapManager={
 		
 		//Al final si no se ha cumplido ninguna de las dos condiciones habrá que hacer una llamada a DataManager.getBikeLanes
 		
-	}
+	},
+	showNearestStation:function(){
+		if(!MapManager.flagStationLayer){
+		$(".tabbar .button.estacion").trigger("singletap");	
+		}
+		
+		navigator.geolocation.getCurrentPosition(function(position){
+			
+			console.log("Hemos obtenido la posición");
+			var distance=100000000;
+			var codigo;
+			MapManager.BikeStations.find("parada").each(function(){
+				var d=calculateDistance(new google.maps.LatLng(position.coords.latitude,position.coords.longitude),new google.maps.LatLng($(this).attr("lat"),$(this).attr("lng")));
+				
+				if(d<distance){
+					distance=d;
+					codigo=$(this).attr("codigo");
+				}
+				
+			});
+			
+			MapManager.showBikeStationDialog(codigo);
+			
+		})
+		
+	},
 	
 	
 }

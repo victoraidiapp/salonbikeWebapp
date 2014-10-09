@@ -29,6 +29,9 @@
 	.tabbar > .button.listado > .icon  {
       -webkit-mask-image: url('../icons/list.png');
     }
+	.tabbar > .button{
+	font-size:8px;	
+	}
     .image-grid, .image-grid > li {
       list-style: none;
       margin: 0;

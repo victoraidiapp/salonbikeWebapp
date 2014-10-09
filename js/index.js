@@ -56,6 +56,7 @@ var app = {
 		return false;
 	}else if($(this).hasClass("ruta")){
 		console.log("Pulsado ruta.");
+		MapManager.showNearestStation();
 		return false;
 	}else if($(this).hasClass("carril")){
 		console.log("Pulsado carril.");

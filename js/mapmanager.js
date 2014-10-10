@@ -201,6 +201,7 @@ var MapManager={
 			cancelButton:'Volver',
 			continueButton:'Ruta',
 			callback:function(){
+				console.log("Queremos abrir la direccion "+$href);
 				window.open($href, "_system");
 			}
 		})
@@ -213,12 +214,40 @@ var MapManager={
 		
 		$.UIPopup({
 			id:'bsDialog',
-			title:'<div class="dialogZone" style="background-color:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</div>',
+			title:'<p style="background:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</p>',
 			message:'<div class="dialogLine"><span class="icon length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>',
 			cancelButton:'Volver',
 			continueButton:'Ruta',
 			callback:function(){
+				navigator.geolocation.getCurrentPosition(function(position){
+				var $href;	
+				var distance=1000000;
+				var latlng;
+				 $lane.find("LineString").each(function(){
+							var coordinates = $(this).children("coordinates").text();
+							var pareja = coordinates.split(",0.0");
+												
+							var flagCoordinates =new Array();
+							for( c in pareja){
+								var ll=pareja[c].split(",");
+								//console.log("Vamos a añadir las coordenadas "+ll[0]+","+ll[1]);
+															
+								if(typeof(ll[1])=="undefined"){
+									//console.log("Esta no la añadimos "+separador[c]);
+								continue;	
+								}
+								var d=calculateDistance(new google.maps.LatLng(position.coords.latitude,position.coords.longitude),new google.maps.LatLng(parseFloat(ll[1]), parseFloat(ll[0])));
+								if(d<distance){
+									distance=d;
+									latlng=new google.maps.LatLng(parseFloat(ll[1]), parseFloat(ll[0]));
+								}
+							}
+							
+				})
+				var $href='maps://maps.apple.com/?daddr='+latlng.lat()+','+latlng.lng()+'&directionsmode=walking';
+				console.log("Queremos abrir la direccion "+$href);
 				window.open($href, "_system");
+				})
 			}
 		})
 	},

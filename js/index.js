@@ -73,6 +73,7 @@ var app = {
 			}
 		return false;
 	}else if($(this).hasClass("rutabici")){
+		MapManager.showNearestLane();
 		console.log("Pulsado Ruta en bici.");
 		return false;
 	}else if($(this).hasClass("listado")){

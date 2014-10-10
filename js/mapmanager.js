@@ -297,6 +297,49 @@ var MapManager={
 		})
 		
 	},
+	showNearestLane:function(){
+	if(!MapManager.flagLanesLayer){
+	$(".tabbar .button.carril").trigger("singletap");	
+	}
+		navigator.geolocation.getCurrentPosition(function(position){
+			
+			console.log("Hemos obtenido la posición");
+			var distance=100000000;
+			var color;
+			MapManager.BikeLanes.find("LanesZone").each(function(){
+				var colorLane=$(this).children("color").text();
+				$(this).find("LineString").each(function(){
+							var coordinates = $(this).children("coordinates").text();
+							var pareja = coordinates.split(",0.0");
+												
+							var flagCoordinates =new Array();
+							for( c in pareja){
+								var ll=pareja[c].split(",");
+								//console.log("Vamos a añadir las coordenadas "+ll[0]+","+ll[1]);
+															
+								if(typeof(ll[1])=="undefined"){
+									//console.log("Esta no la añadimos "+separador[c]);
+								continue;	
+								}
+								var d=calculateDistance(new google.maps.LatLng(position.coords.latitude,position.coords.longitude),new google.maps.LatLng(parseFloat(ll[1]), parseFloat(ll[0])));
+								if(d<distance){
+									distance=d;
+									color=colorLane;
+								}
+							}
+							
+				})
+				
+				
+				
+				
+				
+			});
+			
+			MapManager.showBikeLaneDialog(color);
+			
+		})
+	}
 	
 	
 }

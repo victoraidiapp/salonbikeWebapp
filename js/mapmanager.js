@@ -214,7 +214,7 @@ var MapManager={
 		
 		$.UIPopup({
 			id:'bsDialog',
-			title:'<p style="background:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</p>',
+			title:'<div class="dialogZone" style="background-color:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</div>',
 			message:'<div class="dialogLine"><span class="icon length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>',
 			cancelButton:'Volver',
 			continueButton:'Ruta',

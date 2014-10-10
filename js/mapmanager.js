@@ -10,6 +10,7 @@ var MapManager={
 	BikeLanes:null,
 	BikeLanesPolyLine:new Array(),//Este array contiene una colección de google.maps.Polyline que luego se pintan en el mapa con el método setMap
 	BikeLanesMarker:new Array(),
+	NearestBikeLaneLatLng:null,
 	BikeStations:null,
 	BikeStationsMarker:new Array(),
 	//Esta función inicializa y pinta el mapa Google, para ello recibe el identificador del contenedor donde pintar el mapa
@@ -208,18 +209,50 @@ var MapManager={
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeLaneDialog:function(laneColor){
+		MapManager.NearestBikeLaneLatLng=null;
 		console.log("Buscamos el color "+laneColor);
 		var $lane=MapManager.BikeLanes.find('color:contains("'+laneColor+'")').parent();
 		console.log("El lane seleccionado es "+$lane.children("name").text());
-		
+		MapManager.getDistanceToLane($lane);
 		$.UIPopup({
 			id:'bsDialog',
 			title:'<div class="dialogZone" style="background-color:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</div>',
-			message:'<div class="dialogLine"><span class="icon length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>',
+			message:'<div class="dialogLine"><span class="icon icon_length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_toLane"></span>Distancia al carril: <strong id="distanceToLane" class="calculating"></strong></div>',
 			cancelButton:'Volver',
 			continueButton:'Ruta',
-			callback:function(){
-				navigator.geolocation.getCurrentPosition(function(position){
+			callback:function(){MapManager.initRouteToLane($lane)}
+		})
+	},
+	
+	getDistanceToStation:function(stLat,stLng){
+		navigator.geolocation.getCurrentPosition(function(position){
+			console.log("Hemos obtenido la posición");
+			DataManager.getDistance(stLat,stLng,position.coords.latitude ,position.coords.longitude,function(d){
+				$("#distanceToStation").text(d).removeClass("calculating");
+			});
+		})
+	},
+	getDistanceToLane:function($lane){
+		console.log("getDistanceToLane invocada");
+		if(MapManager.NearestBikeLaneLatLng!=null){
+			navigator.geolocation.getCurrentPosition(function(position){
+			console.log("Vamos a mostrar la distancia del lane");
+			DataManager.getDistance(MapManager.NearestBikeLaneLatLng.lat(),MapManager.NearestBikeLaneLatLng.lng(),position.coords.latitude ,position.coords.longitude,function(d){
+				console.log("El resultado es "+d);
+				$("#distanceToLane").text(d).removeClass("calculating");
+			});
+			
+		})
+		return;
+		
+		
+		}
+		MapManager.getNearestLatLngOfLane($lane,MapManager.getDistanceToLane);
+	},
+	getNearestLatLngOfLane:function($lane,$function){
+		console.log("getNearestLatLngOfLane invocada");
+		navigator.geolocation.getCurrentPosition(function(position){
 				var $href;	
 				var distance=1000000;
 				var latlng;
@@ -244,22 +277,23 @@ var MapManager={
 							}
 							
 				})
-				var $href='maps://maps.apple.com/?daddr='+latlng.lat()+','+latlng.lng()+'&directionsmode=walking';
+				MapManager.NearestBikeLaneLatLng=latlng;
+				console.log("Ya hemos calculado el nearestlatlng, ahora ejecutaremos la funcion que es de tipo "+typeof($function));
+				if(typeof($function) !=="undefined"){
+					$function($lane);
+				}
+		})
+	},
+	initRouteToLane:function($lane){
+				if(MapManager.NearestBikeLaneLatLng!=null){
+				var $href='maps://maps.apple.com/?daddr='+MapManager.NearestBikeLaneLatLng.lat()+','+MapManager.NearestBikeLaneLatLng.lng()+'&directionsmode=walking';
 				console.log("Queremos abrir la direccion "+$href);
 				window.open($href, "_system");
-				})
-			}
-		})
-	},
-	
-	getDistanceToStation:function(stLat,stLng){
-		navigator.geolocation.getCurrentPosition(function(position){
-			console.log("Hemos obtenido la posición");
-			DataManager.getDistance(stLat,stLng,position.coords.latitude ,position.coords.longitude,function(d){
-				$("#distanceToStation").text(d).removeClass("calculating");
-			});
-		})
-	},
+				return;
+				}
+				MapManager.getNearestLatLngOfLane($lane,MapManager.initRouteToLane);
+				//MapManager.initRouteToLane($lane);
+			},
 	hideLaneList:function(){
 		MapManager.flagLanesList=false;
 		$.UIGoToArticle("#mapa");

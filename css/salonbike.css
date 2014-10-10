@@ -82,6 +82,14 @@
 	vertical-align:middle;
 	display:inline-block;
 	}
+	.dialogLine .icon_toLane{
+	background-image: url('../icons/route_icon.png');
+	height: 48px;
+	width: 48px;		
+	background-size:100%;
+	vertical-align:middle;
+	display:inline-block;
+	}
 	
 	.dialogLine .icon_length{
 	background-image: url('../icons/length.png');

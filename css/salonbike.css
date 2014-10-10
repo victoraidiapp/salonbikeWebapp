@@ -17,13 +17,14 @@
       -webkit-mask-image: url('../icons/bikeStations.png');
     }
     .tabbar > .button.ruta > .icon  {
-      -webkit-mask-image: url('../icons/route.png');
+		-webkit-mask-image: url('../icons/route-nearest-station.png');
+     
     }
     .tabbar > .button.carril > .icon {
       -webkit-mask-image: url('../icons/carrilBici.png');
     }
     .tabbar > .button.rutabici > .icon  {
-      -webkit-mask-image: url('../icons/route-nearest-station.png');
+       -webkit-mask-image: url('../icons/route.png');
     }
 	
 	.tabbar > .button.listado > .icon  {

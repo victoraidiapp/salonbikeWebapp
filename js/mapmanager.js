@@ -309,14 +309,14 @@ var MapManager={
 		}
 
 		if(MapManager.BikeLanes!=null){
-			$("#listaZonas .role-content").append("<ul class='list'><span style='margin-left:20px;font-size:24px;'><strong>CARRILES BICI</strong><br><br></span></ul>");		
+			$("#listaZonas .role-content").append("<ul class='list'><!--<span style='margin-left:20px;font-size:24px;'><strong>CARRILES BICI</strong><br><br></span>--></ul>");		
 			console.log("Obtenemos las zonas");
 			MapManager.BikeLanes.find("LanesZone").each(function(){
 				var $zones = $(this).children("name").text();
 				var $color = $(this).children("color").text();
 				console.log("El título de esta zona es "+$zones);
 				console.log("Color: "+$color);
-				$("#listaZonas .role-content ul").append('<p class="colorList" style="background-color:'+$color+';"></p><li class="listZoneDialog">'+$zones+'</li>');		
+				$("#listaZonas .role-content ul").append('<li class="listZoneDialog"><h3 style="border-color:'+$color+';">'+$zones+'</h3></li>');		
 			})
 			
 		}
@@ -332,9 +332,10 @@ var MapManager={
 		
 	},
 	showNearestStation:function(){
-		if(!MapManager.flagStationLayer){
-		$(".tabbar .button.estacion").trigger("singletap");	
-		}
+		LoadingDialog.show("Buscando la estación más cercana");
+		if(MapManager.BikeStations!=null){
+		//$(".tabbar .button.estacion").trigger("singletap");	
+		
 		
 		navigator.geolocation.getCurrentPosition(function(position){
 			
@@ -350,16 +351,23 @@ var MapManager={
 				}
 				
 			});
-			
+			LoadingDialog.hide();
 			MapManager.showBikeStationDialog(codigo);
 			
+		})
+		return;
+		}
+		DataManager.getBikeStations(function(bs){
+			MapManager.BikeStations=bs;
+			MapManager.showNearestStation();
 		})
 		
 	},
 	showNearestLane:function(){
-	if(!MapManager.flagLanesLayer){
-	$(".tabbar .button.carril").trigger("singletap");	
-	}
+		LoadingDialog.show("Buscando carril más cercano...");
+	if(MapManager.BikeLanes!=null){
+	//$(".tabbar .button.carril").trigger("singletap");	
+	
 		navigator.geolocation.getCurrentPosition(function(position){
 			
 			console.log("Hemos obtenido la posición");
@@ -394,10 +402,19 @@ var MapManager={
 				
 				
 			});
-			
+			LoadingDialog.hide();
 			MapManager.showBikeLaneDialog(color);
 			
 		})
+		return;
+		}
+		
+		DataManager.getBikeLanes(function(b){
+			MapManager.BikeLanes=b;
+			
+			MapManager.showNearestLane();
+		});
+		
 	}
 	
 	

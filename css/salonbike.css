@@ -2,6 +2,11 @@
 	/*
       Styles for iOS tab bar SalOnBike.
     */
+	@font-face {
+font-family: Vitor;
+src: url("vitor.otf") format("opentype");
+}
+
     .isiOS .tabbar > .button > .icon,
     .isSafari .tabbar > .button > .icon {
       background-color: #929292;
@@ -115,14 +120,31 @@
 	
 	.listZoneDialog{
 	font-weight:bold;
-	margin-left:20px;
-	bottom:80px;
-	}
+	margin-left:0px;
+	padding:0px!important;
 	
+	
+	}
+	.listZoneDialog h3{
+	border-left-width: 20px;
+border-top-style: none;
+border-right-style: none;
+border-bottom-style: none;
+border-left-style: solid;	
+min-height:35px;
+/* line-height:65px!important; */
+font-size: 24px;
+padding-top: 15px;
+padding-bottom:15px;
+padding-left: 10px;
+	}
+	#listaZonas ul.list{
+	margin-top:65px;	
+	}
 	.colorList{
 	width:15px;
 	height:65px;
-	position:relative;
+	display:inline-block;
 	}
 	
 	.calculating{
@@ -133,4 +155,27 @@
 	background-size:100%;
 	display:inline-block;
 	}
-
+	nav.current{
+	background-color:#38a0f9!important;	
+	height:65px!important;
+	}
+	nav.current h1{
+		
+		top: 30px;
+left:30px;
+right:0px;
+font-size: 26px!important;
+text-align:left;
+font-family:Vitor;
+	}
+	
+#home-button{
+	background-image: url(../icons/toolbar-icon.png);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	z-index: 20;
+	left: 20px;
+	top: 20px;	
+}

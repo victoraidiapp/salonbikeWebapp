@@ -115,10 +115,10 @@ h1 {
 }
 
 article .loading{
-	background-color: #000;
+	background-color: #38a0f9;
 	background-image: url(../img/ajax-loader.gif);
 	background-repeat:no-repeat;
-	opacity:0.4;
+	
 	width:95%;
 	margin-left:auto;
 	margin-right:auto;
@@ -148,6 +148,6 @@ article section{
 padding-top:0px!important;	
 }
 article.current .loading.visible{
-	opacity:1.0;
+	opacity:0.7;
 
 }

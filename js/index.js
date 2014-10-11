@@ -38,6 +38,16 @@ var app = {
 		jQuery(document).off("tap",".tabbar .button");
 		jQuery(document).off("singletap",".tabbar .button");
 		$('body').find('.tabbar').off('singletap', '.button');
+		$(document).on("singletap","#home-button",function(event){
+			$.UIPopup({
+			id:'creditsDialog',
+			title:'<div class="dialogZone" style="background-color:#38a0f9;">Créditos</div>',
+			message:'<div class="dialogLine">Aquí van los creditos</div>',
+			cancelButton:'Volver',
+			continueButton:null
+			
+		})
+		})
 		jQuery(document).on("singletap",".tabbar .button", function(event){
 			//event.stopPropagation();
 	if($(this).hasClass("estacion")){

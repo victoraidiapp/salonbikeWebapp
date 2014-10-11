@@ -113,6 +113,18 @@
 	text-align:left;
 	}
 	
+	.listZoneDialog{
+	font-weight:bold;
+	margin-left:20px;
+	bottom:80px;
+	}
+	
+	.colorList{
+	width:15px;
+	height:65px;
+	position:relative;
+	}
+	
 	.calculating{
 		background-image: url('../img/ajax-loader.gif');
 		opacity:0.5;

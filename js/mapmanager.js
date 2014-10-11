@@ -309,7 +309,7 @@ var MapManager={
 		}
 
 		if(MapManager.BikeLanes!=null){
-			$("#listaZonas .role-content").append("<ul class='list'><span style="margin-left:20px;font-size:24px;"><strong>CARRILES BICI</strong><br><br></span></ul>");		
+			$("#listaZonas .role-content").append("<ul class='list'><span style='margin-left:20px;font-size:24px;'><strong>CARRILES BICI</strong><br><br></span></ul>");		
 			console.log("Obtenemos las zonas");
 			MapManager.BikeLanes.find("LanesZone").each(function(){
 				var $zones = $(this).children("name").text();

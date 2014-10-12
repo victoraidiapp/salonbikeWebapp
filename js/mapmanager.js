@@ -209,6 +209,7 @@ var MapManager={
 	},
 	//Esta funcion muestra el cuadro de diálogo con la info del intercambiador seleccionado
 	showBikeLaneDialog:function(laneColor){
+		if(MapManager.BikeLanes!=null){
 		MapManager.NearestBikeLaneLatLng=null;
 		console.log("Buscamos el color "+laneColor);
 		var $lane=MapManager.BikeLanes.find('color:contains("'+laneColor+'")').parent();
@@ -223,6 +224,19 @@ var MapManager={
 			continueButton:'Ruta',
 			callback:function(){MapManager.initRouteToLane($lane)}
 		})
+		
+		return;
+		}
+		
+		DataManager.getBikeLanes(function(b){
+			MapManager.BikeLanes=b;
+			console.log("Ya estamos de vuelta");
+			MapManager.showBikeLaneDialog(laneColor);
+			
+		});
+		//
+		return;
+		
 	},
 	
 	getDistanceToStation:function(stLat,stLng){
@@ -297,6 +311,7 @@ var MapManager={
 	hideLaneList:function(){
 		MapManager.flagLanesList=false;
 		$.UIGoToArticle("#mapa");
+		
 	},
 	
 	//Esta función mostrará el listado de los carriles bici

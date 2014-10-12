@@ -108,14 +108,19 @@ src: url("vitor.otf") format("opentype");
 	
 	.dialogZone{
 	margin-right:-15px;
-	margin-left:-15px;
-	padding-left: 2px;
-	font-size:18px;
-	padding-left:18px;
-	border-top-left-radius: 11px;
-	border-top-right-radius: 11px;
-	color:white;
-	text-align:left;
+margin-left:-15px;
+padding-left: 2px;
+font-size:22px;
+padding-left:18px;
+border-top-left-radius: 11px;
+border-top-right-radius: 11px;
+color:white;
+text-align:left;
+font-family: Vitor;
+line-height:20px;
+padding-top: 10px;
+padding-bottom:10px;
+padding-right:18px;
 	}
 	
 	.listZoneDialog{
@@ -158,6 +163,10 @@ padding-left: 10px;
 	nav.current{
 	background-color:#38a0f9!important;	
 	height:65px!important;
+	
+	}
+	nav.zonas{
+	z-index:100;	
 	}
 	nav.current h1{
 		
@@ -178,4 +187,9 @@ font-family:Vitor;
 	z-index: 20;
 	left: 20px;
 	top: 20px;	
+	-webkit-transition:opacity 1s;
+	opacity:0;
+}
+#home-button.visible{
+opacity:1;	
 }

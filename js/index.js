@@ -38,6 +38,14 @@ var app = {
 		jQuery(document).off("tap",".tabbar .button");
 		jQuery(document).off("singletap",".tabbar .button");
 		$('body').find('.tabbar').off('singletap', '.button');
+		
+		//Manejamos el fin de carga de article para visualizar el homebutton
+		$('article').on('navigationend', function(e) {
+			//z=$('#home-button').css("zIndex");
+			$('#home-button').toggleClass("visible");
+		})
+		
+		//Manejamos el singletap en el home button para que muestre el diálogo con los créditos
 		$(document).on("singletap","#home-button",function(event){
 			$.UIPopup({
 			id:'creditsDialog',
@@ -48,6 +56,16 @@ var app = {
 			
 		})
 		})
+		
+		$(document).on("singletap","li.listZoneDialog",function(event){
+			$.UIGoToArticle("#mapa");
+			
+			
+			//Como jquery nos devuelve el color en formato rgb lo tenemos que convertir a hexadecimal (Que es el valor que espera la función showBikeLaneDialog
+			//La función rgb2hex está definida en el archivo util.js
+			MapManager.showBikeLaneDialog(rgb2hex($(this).find("h3").css("borderColor")));
+		})
+		
 		jQuery(document).on("singletap",".tabbar .button", function(event){
 			//event.stopPropagation();
 	if($(this).hasClass("estacion")){

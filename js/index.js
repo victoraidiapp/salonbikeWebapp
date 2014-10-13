@@ -46,7 +46,7 @@ var app = {
 		})
 		
 		//Manejamos el singletap en el home button para que muestre el diálogo con los créditos
-		$(document).on("singletap","#home-button",function(event){
+		$(document).on("singletap",".home-button",function(event){
 			$.UIPopup({
 			id:'creditsDialog',
 			title:'<div class="dialogZone" style="background-color:#38a0f9;">Créditos</div>',

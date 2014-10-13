@@ -105,15 +105,18 @@ src: url("vitor.otf") format("opentype");
 	vertical-align:middle;
 	display:inline-block;
 	}
-	
+	.popup{
+	overflow:hidden;
+		
+	}
+	.popup header h1{
+	margin:0px;	
+	}
 	.dialogZone{
-	margin-right:-15px;
-margin-left:-15px;
-padding-left: 2px;
+	
 font-size:22px;
-padding-left:18px;
-border-top-left-radius: 11px;
-border-top-right-radius: 11px;
+padding-left:10px;
+padding-right:10px;
 color:white;
 text-align:left;
 font-family: Vitor;
@@ -178,17 +181,14 @@ text-align:left;
 font-family:Vitor;
 	}
 	
-#home-button{
+#home-button,.home-button{
 	background-image: url(../icons/toolbar-icon.png);
 	background-repeat: no-repeat;
 	height: 40px;
 	width: 40px;
-	position: absolute;
+	
 	z-index: 20;
-	left: 20px;
-	top: 20px;	
-	-webkit-transition:opacity 1s;
-	opacity:0;
+	
 }
 #home-button.visible{
 opacity:1;	

@@ -39,11 +39,7 @@ var app = {
 		jQuery(document).off("singletap",".tabbar .button");
 		$('body').find('.tabbar').off('singletap', '.button');
 		
-		//Manejamos el fin de carga de article para visualizar el homebutton
-		$('article').on('navigationend', function(e) {
-			//z=$('#home-button').css("zIndex");
-			$('#home-button').toggleClass("visible");
-		})
+		
 		
 		//Manejamos el singletap en el home button para que muestre el diálogo con los créditos
 		$(document).on("singletap",".home-button",function(event){

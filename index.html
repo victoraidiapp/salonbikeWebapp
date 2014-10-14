@@ -38,8 +38,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/util.js"></script>   
         <script type="text/javascript" src="chui/chui-3.5.4.min.js"></script>
-        <script type="text/javascript" src="js/bikestation.js"></script>
-        <script type="text/javascript" src="js/bikelane.js"></script>
+        <script type="text/javascript" src="js/lang.js"></script>
         <script type="text/javascript" src="js/loadingdialog.js"></script>
         <script type="text/javascript" src="js/datamanager.js"></script>
         <script type="text/javascript" src="js/mapmanager.js"></script>        
@@ -55,16 +54,20 @@
         
         <script type="text/javascript">
     	$(function() {
+			var $lang;
+			$lang = navigator.language || navigator.userLanguage
+		$lang=$lang.substr(0,2);
+			
       		var opts = {
          		tabs : 5,
          		imagePath : "icons/",
          		icons : ["estacion", "ruta", "carril", "rutabici", "listado"],
-         		labels : ["Estaciones", "Más cercana", "Carril bici", "Más cercano", "listaZonas"],
+         		labels : [Lang[$lang]["Estaciones"], Lang[$lang]["Más cercana"], Lang[$lang]["Carril bici"], Lang[$lang]["Más cercano"], Lang[$lang]["listaZonas"]],
          		//selected : 2
       		};
       		$.UITabbar(opts);
-			app.initialize();			
-			
+						
+			app.initialize();
         	console.log('Se inició el mapa?');        	
     	});  	   		
   		</script>

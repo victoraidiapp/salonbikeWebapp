@@ -28,6 +28,7 @@ var app = {
 		
 		setTimeout(MapManager.init("gmapa"),3000);
 		
+		$("nav.zonas h1").text(Lang[$lang]["CARRILES BICI"]);
 
 
 		

@@ -49,7 +49,7 @@ var MapManager={
 	},
 	//Esta función mostrará la capa con los intercambiadores
 	showBikeStationLayer:function(){
-		LoadingDialog.show("Cargando contenido");
+		LoadingDialog.show(Lang[$lang]["Cargando contenido"]);
 		if(MapManager.BikeStationsMarker.length>0){
 			for(m in MapManager.BikeStationsMarker){
 				MapManager.BikeStationsMarker[m].setMap(MapManager.mapObject);	
@@ -95,7 +95,7 @@ var MapManager={
 	showBikeLaneLayer:function(){
 		
 		
-		LoadingDialog.show("Cargando contenido");
+		LoadingDialog.show(Lang[$lang]["Cargando contenido"]);
 		console.log("El tmaaño de las lineas es "+MapManager.BikeLanesPolyLine.length);
 		if(MapManager.BikeLanesPolyLine.length>0){//Si ya tenemos las lineas guardadas, simplemente las pintamos
 		
@@ -200,6 +200,7 @@ var MapManager={
 		
 		
 		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
+		
 		MapManager.getDistanceToStation($station.attr("lat"),$station.attr("lng"));
 		var $href='maps://maps.apple.com/?daddr='+$station.attr("lat")+','+$station.attr("lng")+'&directionsmode=walking';
 		
@@ -207,11 +208,11 @@ var MapManager={
 		$.UIPopup({
 			id:'bsDialog',
 			title:$station.attr("nombre"),
-			message:'<div class="dialogLine"><span class="icon icon_candados"></span>Candados disponibles: <strong>'+$station.attr("candadosLibres")+'</strong></div>'+
-			'<div class="dialogLine"><span class="icon icon_bicis"></span>Bicis disponibles: <strong>'+$station.attr("bicicletas")+'</strong></div>'+
-			'<div class="dialogLine"><span class="icon icon_length"></span>Distancia a estación: <strong id="distanceToStation" class="calculating"></strong></div>',
-			cancelButton:'Volver',
-			continueButton:'Ruta',
+			message:'<div class="dialogLine"><span class="icon icon_candados"></span>'+Lang[$lang]["Candados disponibles:"] +'<strong>'+$station.attr("candadosLibres")+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_bicis"></span>'+Lang[$lang]["Bicis disponibles:"] +'<strong>'+$station.attr("bicicletas")+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_length"></span>'+Lang[$lang]["Distancia a estación:"] +'<strong id="distanceToStation" class="calculating"></strong></div>',
+			cancelButton:Lang[$lang]['Volver'],
+			continueButton:Lang[$lang]['Ruta'],
 			callback:function(){
 				console.log("Queremos abrir la direccion "+$href);
 				window.open($href, "_system");
@@ -229,10 +230,10 @@ var MapManager={
 		$.UIPopup({
 			id:'bsDialog',
 			title:'<div class="dialogZone" style="background-color:'+$lane.children("color").text()+';">'+$lane.children("name").text()+'</div>',
-			message:'<div class="dialogLine"><span class="icon icon_length"></span>Longitud: <strong>'+$lane.children("length").text()+'</strong></div>'+
-			'<div class="dialogLine"><span class="icon icon_toLane"></span>Distancia al carril: <strong id="distanceToLane" class="calculating"></strong></div>',
-			cancelButton:'Volver',
-			continueButton:'Ruta',
+			message:'<div class="dialogLine"><span class="icon icon_length"></span>'+Lang[$lang]["Longitud:"]+'<strong>'+$lane.children("length").text()+'</strong></div>'+
+			'<div class="dialogLine"><span class="icon icon_toLane"></span>'+Lang[$lang]["Distancia al carril:"]+'<strong id="distanceToLane" class="calculating"></strong></div>',
+			cancelButton:Lang[$lang]['Volver'],
+			continueButton:Lang[$lang]['Ruta'],
 			callback:function(){MapManager.initRouteToLane($lane)}
 		})
 		
@@ -335,7 +336,7 @@ var MapManager={
 		}
 
 		if(MapManager.BikeLanes!=null){
-			$("#listaZonas .role-content").append("<ul class='list'><!--<span style='margin-left:20px;font-size:24px;'><strong>CARRILES BICI</strong><br><br></span>--></ul>");		
+			$("#listaZonas .role-content").append("<ul class='list'></ul>");		
 			console.log("Obtenemos las zonas");
 			MapManager.BikeLanes.find("LanesZone").each(function(){
 				var $zones = $(this).children("name").text();
@@ -358,7 +359,7 @@ var MapManager={
 		
 	},
 	showNearestStation:function(){
-		LoadingDialog.show("Buscando la estación más cercana");
+		LoadingDialog.show(Lang[$lang]["Buscando la estación más cercana"]);
 		if(MapManager.BikeStations!=null){
 		//$(".tabbar .button.estacion").trigger("singletap");	
 		
@@ -390,7 +391,7 @@ var MapManager={
 		
 	},
 	showNearestLane:function(){
-		LoadingDialog.show("Buscando carril más cercano...");
+		LoadingDialog.show(Lang[$lang]["Buscando carril más cercano"]);
 	if(MapManager.BikeLanes!=null){
 	//$(".tabbar .button.carril").trigger("singletap");	
 	

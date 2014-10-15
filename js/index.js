@@ -52,7 +52,11 @@ var app = {
 			$.UIPopup({
 			id:'creditsDialog',
 			title:'<div class="dialogZone" style="background-color:#38a0f9;">Créditos</div>',
-			message:'<div class="dialogLine">Aquí van los creditos</div>',
+			message:'<div class="creditDialog">Desarrollado por: <br> <img src="img/logoaidiapp.png"/></div>'+
+			'<div class="creditDialog">Desarrolladores:<br></div>'+
+			'<p class="creditDialogP" style="text-align:left; margin-top:10px;">Víctor Pérez Tapia <br> Álvaro Benéitez Martín</p>'+
+			'<div class="creditDialog">Agradecimientos:<br></div>'+'<p class="creditDialogP" style="text-align:left; margin-top:10px;"> A la empresa DomoBlue por '+  
+			'proporcionarnos acceso a la API del servicio OnRoll y así poder mostrar información en tiempo real de los intercambiadores de biciletas.</p>',
 			cancelButton:'Volver',
 			continueButton:null
 			

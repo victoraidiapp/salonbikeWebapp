@@ -146,6 +146,19 @@ padding-top: 15px;
 padding-bottom:15px;
 padding-left: 10px;
 	}
+	
+	.creditDialog {
+	font-weight:bold;
+	font-size:14px;
+	text-transform:capitalize;
+	margin-left:10%;
+	}
+	
+	.creditDialogP{
+	text-transform:capitalize;
+	margin-left:10%;
+	}
+	
 	#listaZonas ul.list{
 	margin-top:65px;	
 	}

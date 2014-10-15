@@ -43,7 +43,11 @@ var app = {
 		jQuery(document).off("tap",".tabbar .button");
 		jQuery(document).off("singletap",".tabbar .button");
 		$('body').find('.tabbar').off('singletap', '.button');
-		
+		$(document).on("tap","a.external",function(e){
+			e.preventDefault();
+			window.open($(this).attr('href'), "_system");
+	return false;
+		} )
 		
 		
 		//Manejamos el singletap en el home button para que muestre el diálogo con los créditos
@@ -52,11 +56,10 @@ var app = {
 			$.UIPopup({
 			id:'creditsDialog',
 			title:'<div class="dialogZone" style="background-color:#38a0f9;">Créditos</div>',
-			message:'<div class="creditDialog">Desarrollado por: <br> <img src="img/logoaidiapp.png"/></div>'+
-			'<div class="creditDialog">Desarrolladores:<br></div>'+
+			message:'<div class="creditDialog">'+Lang[$lang]["Desarrollado por:"]+'<br> <a href="http://www.aidiapp.com" class="external"><img src="img/logoaidiapp.png"/></a></div>'+
+			'<div class="creditDialog">'+Lang[$lang]["Desarrolladores:"]+'<br></div>'+
 			'<p class="creditDialogP" style="text-align:left; margin-top:10px;">Víctor Pérez Tapia <br> Álvaro Benéitez Martín</p>'+
-			'<div class="creditDialog">Agradecimientos:<br></div>'+'<p class="creditDialogP" style="text-align:left; margin-top:10px;"> A la empresa DomoBlue por '+  
-			'proporcionarnos acceso a la API del servicio OnRoll y así poder mostrar información en tiempo real de los intercambiadores de biciletas.</p>',
+			'<div class="creditDialog">'+Lang[$lang]["Agradecimientos:"]+'<br></div>'+'<p class="creditDialogP" style="text-align:left; margin-top:10px;">'+Lang[$lang]["agradecimientosT"]+'</p>',
 			cancelButton:'Volver',
 			continueButton:null
 			

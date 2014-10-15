@@ -16,7 +16,11 @@ var Lang={
 		"Cargando contenido":"Loading content",
 		"CARRILES BICI":"BIKELANES",
 		"Volver":"Back",
-		"Ruta":"Route"
+		"Ruta":"Route",
+		"Desarrollado por:":"Develop by: ",
+		"Desarrolladores:":"Developers: ",
+		"Agradecimientos:": "Tanks to:",
+		"agradecimientosT":"To the Domoblue company for providing us access to the API and so we can display real-time information about the bikestations."
 		
 		
 		
@@ -37,7 +41,11 @@ var Lang={
 		"Cargando contenido":"Cargando contenido",
 		"CARRILES BICI":"CARRILES BICI",
 		"Volver":"Volver",
-		"Ruta":"Ruta"
+		"Ruta":"Ruta",
+		"Desarrollado por:":"Desarrollado por: ",
+		"Desarrolladores:":"Desarrolladores: ",
+		"Agradecimientos:": "Agradecimientos:",
+		"agradecimientosT":'A la empresa DomoBlue por proporcionarnos acceso a la API del servicio OnRoll y así poder mostrar información en tiempo real de los intercambiadores de bicicletas.'
 		
 		
 	}

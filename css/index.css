@@ -168,8 +168,7 @@ padding-top: 10px;
 .toolbar .button{
 margin-right:10px;	
 border:none!important;
-opacity:0.3;
-transition:opacity linear;
+
 
 }
 .toolbar .button.selected{
@@ -183,13 +182,19 @@ float:right;
 opacity:1;
 padding-right:10px;
 padding-left:10px;
+font-size:20px;
 	
 }
 .toolbar .list{
 clear:both;	
+margin:0px!important;
+padding:0px!important;
 }
 .toolbar .list li{
 background-color:transparent!important;	
+font-size:20px;
+margin-left:0px;
+margin-right:0px;
 }
 #gmapa{
 transition:top 0.5s ease-out;	
@@ -197,4 +202,21 @@ transition:top 0.5s ease-out;
 
 #gmapa.opened{
 	top:-130px;
+}
+.button.bg_mov{
+	width:30px;
+	height:30px;
+	background-position:top center;
+	background-repeat:no-repeat;
+	transition:all 0.5s ease-out;
+	display:inline-block;
+}
+.button.bg_mov.selected{
+	background-position:bottom center;
+}
+#bikestationsbtn{
+	background-image:url(../icons/bikeStations_winbtn.png)
+}
+#bikelanebtn{
+	background-image:url(../icons/carrilBici_winbtn.png)
 }

@@ -48,7 +48,7 @@ var app = {
 		
 		
 		//Manejamos el singletap en el home button para que muestre el diálogo con los créditos
-		$(document).on("singletap",".home-button",function(event){
+		$(document).on("tap","#btnCreditos",function(event){
 			console.log("El idioma es "+$lang);
 			$.UIPopup({
 			id:'creditsDialog',
@@ -63,14 +63,34 @@ var app = {
 			
 		})
 		})
+		$(document).on("tap","#btnNearestStation",function(e){
+			MapManager.showNearestStation();
+		})
 		
-		$(document).on("singletap","li.listZoneDialog",function(event){
+		$(document).on("tap","#btnNearestLane",function(e){
+			MapManager.showNearestLane();
+		})
+		$(document).on("tap","#btnZoneList",function(e){
+			MapManager.showLaneList();;
+		})
+		
+		$(document).on("tap","li.listZoneDialog",function(event){
+			//console.log("Queremos mostrar el lane del color "+$(this).find("h3").css("borderColor"));
+			console.log("Queremos mostrar el lane del color "+rgb2hex($(this).find("h3").css("border-left-color")));
 			$.UIGoToArticle("#mapa");
 			
 			
 			//Como jquery nos devuelve el color en formato rgb lo tenemos que convertir a hexadecimal (Que es el valor que espera la función showBikeLaneDialog
 			//La función rgb2hex está definida en el archivo util.js
-			MapManager.showBikeLaneDialog(rgb2hex($(this).find("h3").css("borderColor")));
+			MapManager.flagShowLaneInfo=rgb2hex($(this).find("h3").css("border-left-color"));
+			//MapManager.showBikeLaneDialog(rgb2hex($(this).find("h3").css("border-left-color")));
+		})
+		
+		$('#mapa').on('navigationend', function(e) {
+			if(MapManager.flagShowLaneInfo!=null){
+				MapManager.showBikeLaneDialog(MapManager.flagShowLaneInfo);
+				MapManager.flagShowLaneInfo=null;
+			}
 		})
 		$(document).on("tap",".toolbar",function(e){
 			$(this).removeClass("opened");

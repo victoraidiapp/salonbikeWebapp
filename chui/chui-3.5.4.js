@@ -1073,9 +1073,10 @@ Version: 3.5.4
     //////////////////////////
     // Handle Closing Popups:
     //////////////////////////
-    $('body').on($.eventStart, '.cancel', function() {
+    $('body').on($.eventEnd, '.cancel', function() {
       if ($(this).closest('.popup')[0]) {
         $(this).closest('.popup').UIPopupClose();
+		return false;
       }
     });
     /////////////////////////////////////////////////

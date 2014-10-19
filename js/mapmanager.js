@@ -6,6 +6,7 @@ var MapManager={
 	flagStationLayer:false,
 	flagLanesLayer:false,
 	flagLanesList:false,
+	flagShowLaneInfo:null,
 	mapObject:null,
 	BikeLanes:null,
 	BikeLanesPolyLine:new Array(),//Este array contiene una colección de google.maps.Polyline que luego se pintan en el mapa con el método setMap
@@ -89,14 +90,14 @@ var MapManager={
 		
 		
 		LoadingDialog.show(Lang[$lang]["Cargando contenido"]);
-		console.log("El tmaaño de las lineas es "+MapManager.BikeLanesPolyLine.length);
+		//console.log("El tmaaño de las lineas es "+MapManager.BikeLanesPolyLine.length);
 		if(MapManager.BikeLanesPolyLine.length>0){//Si ya tenemos las lineas guardadas, simplemente las pintamos
-		
+		setTimeout(LoadingDialog.hide(),2000);
 		for(l in this.BikeLanesPolyLine){
 		this.BikeLanesPolyLine[l].setMap(this.mapObject);//Pintamos las lineas en el mapa	
 		}
 		MapManager.flagLanesLayer=true;
-		LoadingDialog.hide();
+		
 			return;
 		}
 		
@@ -195,7 +196,7 @@ var MapManager={
 		var $station=MapManager.BikeStations.find('parada[codigo="'+station+'"]');
 		
 		MapManager.getDistanceToStation($station.attr("lat"),$station.attr("lng"));
-		var $href='maps://maps.apple.com/?daddr='+$station.attr("lat")+','+$station.attr("lng")+'&directionsmode=walking';
+		var $href='ms-walk-to:?destination.latitude='+$station.attr("lat")+'&destination.longitude='+$station.attr("lng");
 		
 		//$href='comgooglemaps://?daddr='+$station.attr("lat")+','+$station.attr("lng")+'&directionsmode=walking';
 		$.UIPopup({
@@ -305,7 +306,7 @@ var MapManager={
 	},
 	initRouteToLane:function($lane){
 				if(MapManager.NearestBikeLaneLatLng!=null){
-				var $href='maps://maps.apple.com/?daddr='+MapManager.NearestBikeLaneLatLng.lat()+','+MapManager.NearestBikeLaneLatLng.lng()+'&directionsmode=walking';
+				var $href='ms-walk-to:?destination.latitude='+MapManager.NearestBikeLaneLatLng.lat()+'&destination.longitude='+MapManager.NearestBikeLaneLatLng.lng();
 				console.log("Queremos abrir la direccion "+$href);
 				window.open($href, "_system");
 				return;
@@ -390,7 +391,7 @@ var MapManager={
 	
 		navigator.geolocation.getCurrentPosition(function(position){
 			
-			console.log("Hemos obtenido la posición");
+			console.log("Hemos obtenido la posición "+position.coords.latitude+","+position.coords.longitude);
 			var distance=100000000;
 			var color;
 			MapManager.BikeLanes.find("LanesZone").each(function(){

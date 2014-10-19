@@ -16,19 +16,12 @@ var MapManager={
 	//Esta función inicializa y pinta el mapa Google, para ello recibe el identificador del contenedor donde pintar el mapa
 	init:function(mapId){
 		
-		var homeControlDiv = document.createElement('div');
 		
-		var controlUI=document.createElement('div');;
-		homeControlDiv.style.margin = '20px';
-		controlUI.setAttribute("class","home-button");
-		homeControlDiv.appendChild(controlUI);
-		
-		homeControlDiv.index = 1;
 		var infoWindow=new google.maps.InfoWindow();
 	 var height = $(window).height();
                 var width = $(window).width();
 
-                $("#"+mapId).height(height-50);
+                $("#"+mapId).height(height-70);
                 $("#"+mapId).width(width);
 		var mapOptions = {
 			    zoom: 13,
@@ -43,7 +36,7 @@ var MapManager={
 		MapManager.mapObject=new google.maps.Map(document.getElementById(mapId),
 			      mapOptions);
 				  
-				  MapManager.mapObject.controls[google.maps.ControlPosition.LEFT_TOP].push(homeControlDiv);
+				 
 				  
 		
 	},

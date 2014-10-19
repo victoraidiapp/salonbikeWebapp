@@ -29,7 +29,7 @@
         
         <!-- Hojas de estilo -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="chui/chui-ios-3.5.4.css" />
+        <link rel="stylesheet" type="text/css" href="chui/chui-win-3.5.4.css" />
         <link rel="stylesheet" href="css/salonbike.css">
         <script type="text/javascript"
       	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBChbZRBqtlb9wg5sbJSOE0amo6dAL503I&sensor=true">
@@ -37,7 +37,7 @@
         <!-- javascript funciones personalizadas -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/util.js"></script>   
-        <script type="text/javascript" src="chui/chui-3.5.4.min.js"></script>
+        <script type="text/javascript" src="chui/chui-3.5.4.js"></script>
         <script type="text/javascript" src="js/lang.js"></script>
         <script type="text/javascript" src="js/loadingdialog.js"></script>
         <script type="text/javascript" src="js/datamanager.js"></script>
@@ -66,7 +66,7 @@
          		labels : [Lang[$lang]["Estaciones"], Lang[$lang]["Más cercana"], Lang[$lang]["Carril bici"], Lang[$lang]["Más cercano"], Lang[$lang]["listaZonas"]],
          		//selected : 2
       		};
-      		$.UITabbar(opts);
+      		//$.UITabbar(opts);
 						
 			app.initialize();
         	console.log('Se inició el mapa?');        	
@@ -75,9 +75,21 @@
   <nav class="current"></nav>
   	<article id="mapa" class="current navigable">
     	<section>
-        
-        	<div class="role-content" id="gmapa"></div>
+              	<div class="role-content" id="gmapa"></div>
         </section>
+        <div class="toolbar current">
+         <div class='button menu' >...</div><div class="center">
+    <span class='button' id="bikestationsbtn" ><img src="icons/bikeStations.png"/></span>
+    <span class='button' id="bikelanebtn"><img src="icons/carrilBici.png"/></span>
+    </div>
+   
+    <ul class='menu list' role='list'>
+    <li>Estación más cercana</li>
+    <li>Carril más cercano</li>
+    <li>Listado de zonas</li>
+    <li>Créditos</li>
+    </ul>
+  </div>
     </article>
     <nav class="next zonas"><h1>CARRILES BICI</h1></nav>
   	<article id="listaZonas" class="next navigable">

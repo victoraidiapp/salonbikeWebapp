@@ -860,7 +860,9 @@ Version: 3.5.4
       var $this = $(this);
       if ($this.parent('.segmented')[0]) return;
       if ($this.parent('.tabbar')[0]) return;
-      $this.addClass('selected');
+	  
+     console.log("Le aplico la clase selected y se la quito");
+	  $this.addClass('selected');
       setTimeout(function() {
         $this.removeClass('selected');
       }, 500);

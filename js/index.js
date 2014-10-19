@@ -40,9 +40,10 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     manejadores: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-		jQuery(document).off("tap",".tabbar .button");
-		jQuery(document).off("singletap",".tabbar .button");
-		$('body').find('.tabbar').off('singletap', '.button');
+		jQuery(document).off("tap",".toolbar .button");
+		jQuery(".toolbar").off("singletap",".button");
+		$('body').find('.toolbar').off('singletap', '.button');
+		$('body').find('.toolbar').off('tap', '.button');
 		
 		
 		
@@ -70,6 +71,46 @@ var app = {
 			//Como jquery nos devuelve el color en formato rgb lo tenemos que convertir a hexadecimal (Que es el valor que espera la función showBikeLaneDialog
 			//La función rgb2hex está definida en el archivo util.js
 			MapManager.showBikeLaneDialog(rgb2hex($(this).find("h3").css("borderColor")));
+		})
+		$(document).on("tap",".toolbar",function(e){
+			$(this).removeClass("opened");
+			$("#gmapa").removeClass("opened");
+		})
+		$(".toolbar").on("singletap",".button",function(event){
+			event.preventDefault();
+			return false;
+		})
+		$(".toolbar").on("tap",".button",function(event){
+			event.preventDefault();
+			
+			if($(this).attr("id")=="bikestationsbtn"){
+				$(this).toggleClass("selected");
+				console.log("Has picado en el botón de bikestation");
+				if($(this).hasClass("selected")){
+					console.log("Queremos mostrar la capa de  stations");
+					MapManager.showBikeStationLayer();
+				}else{
+					MapManager.hideBikeStationLayer();
+				}
+				//alert("Me tocas");
+				return false;
+			}else if($(this).attr("id")=="bikelanebtn"){
+				$(this).toggleClass("selected");
+				if($(this).hasClass("selected")){
+					console.log("Queremos mostrar la capa de  stations");
+					MapManager.showBikeLaneLayer();
+				}else{
+					MapManager.hideBikeLaneLayer();
+				}
+				return false;
+			}else if($(this).hasClass("menu")){
+				console.log("Has picado en el menu");
+				$(this).toggleClass("selected");
+				$(".toolbar").toggleClass("opened");
+				$("#gmapa").toggleClass("opened");
+				return false;
+			}
+			
 		})
 		
 		jQuery(document).on("singletap",".tabbar .button", function(event){

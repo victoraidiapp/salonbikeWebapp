@@ -141,6 +141,9 @@ left:0px;
 z-index:35000;	
 -webkit-transition:opacity 1s;
 }
+#listaZonas .loading{
+	display:none!important;
+}
 article{
 top:0px!important;	
 }

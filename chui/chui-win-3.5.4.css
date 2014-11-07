@@ -1908,18 +1908,18 @@ body.hasTabBar > article {
    =========================== */
 @media only screen and (device-width: 480px) and (orientation: portrait) {
   @-ms-viewport {
-    width: 240px;
+   /*width: 240px;*/
   }
   /*
     IMPORTANT! Define width for html and body
     to prevent horizontal scrolling when viewport is resized.
-  */
+  
   html,
   body,
   body {
     width: 240px;
     height: 400px;
-  }
+  }*/
   nav > .button {
     -ms-flex: 0;
     flex: 0;
